@@ -5,18 +5,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Khondker Maksudul Haque | Resume</title>
+        <title>Khondker Maksudul Haque</title>
 
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
         <style>
             @media screen and (min-width: 800px) {
                 #sidebar {
                     position: fixed;
                     height: 100%;
                 }
+            }
+            .calendar {
+                max-width: 800px;
+            }
+            .contrib-number {
+                font-size: 16px;
             }
         </style>
     </head>
@@ -50,7 +57,7 @@
                             <div class="card">
                                 <h5 class="card-header">Open Source Projects</h5>
                                 <div class="card-body bg-light">
-                                    <div class="row pt-2">
+                                    <div class="row pt-1">
                                         <div class="col-sm-6 pb-1">
                                             <div class="card">
                                                 <div class="card-body">
@@ -132,7 +139,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mt-4">
+                            <div class="card mt-3">
+                                <h5 class="card-header">GitHub Contibutions</h5>
+                                <div class="card-body bg-light">
+                                    <div class="calendar">
+                                        <img src="https://github.githubassets.com/images/spinners/octocat-spinner-128.gif" class="spinner mx-auto d-block"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-3">
                                 <h5 class="card-header">Work Exprience</h5>
                                 <div class="card-body bg-light">
                                     <div class="row pt-2">
@@ -226,7 +241,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="card mt-4">
+                            <div class="card mt-3">
                                 <h5 class="card-header">Blog Posts</h5>
                                 <div class="card-body bg-light">
                                     <div class="row pt-2">
@@ -255,5 +270,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+        <script>
+            GitHubCalendar(".calendar", "saadmk11", { responsive: true });
+        </script>
     </body>
 </html>
