@@ -1,4 +1,4 @@
-name: Update Repo Data
+name: Update My Resume
 
 on:
   push:
