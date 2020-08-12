@@ -3,8 +3,7 @@ import json
 import requests
 
 
-def get_repositories_data(json_file):
-    data = json.load(json_file)
+def get_repositories_data(data):
     new_data = []
 
     for repo in data:
@@ -28,10 +27,9 @@ def get_repositories_data(json_file):
 
 
 def update_json_file():
-    updated_data = ''
-
     with open('repo_data.json', 'r') as json_file:
-        updated_data = get_repositories_data(json_file)
+        data = json.load(json_file)
+        updated_data = get_repositories_data(data)
 
     with open('repo_data.json', 'w') as json_file:
         json_file.write(json.dumps(updated_data, indent=4))
