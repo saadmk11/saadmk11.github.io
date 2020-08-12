@@ -1,4 +1,4 @@
-function getJson(url, callbackFunction) {
+function getJSON(url, callbackFunction) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -19,7 +19,7 @@ function getJson(url, callbackFunction) {
 document.addEventListener('DOMContentLoaded', (event) => {
     var container = document.getElementById("openSourceRepos");
 
-    getJson('repo_data.json', function(data) {
+    getJSON('repo_data.json', function(data) {
         data.forEach(function (repo) {
             var child = `
                 <div class="col-sm-6 pb-2">
