@@ -1,13 +1,13 @@
-function ajaxGET(url, callback) {
+function getJson(url, callbackFunction) {
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             try {
-                var data = JSON.parse(xmlhttp.responseText);
-            } catch(err) {
+                var responseData = JSON.parse(xmlhttp.responseText);
+            } catch(error) {
                 return;
             }
-            callback(data);
+            callbackFunction(responseData);
         }
     };
 
@@ -19,7 +19,7 @@ function ajaxGET(url, callback) {
 document.addEventListener('DOMContentLoaded', (event) => {
     var container = document.getElementById("openSourceRepos");
 
-    ajaxGET('repo_data.json', function(data) {
+    getJson('repo_data.json', function(data) {
         data.forEach(function (repo) {
             var child = `
                 <div class="col-sm-6 pb-2">
