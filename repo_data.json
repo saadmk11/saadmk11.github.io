@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 5983,
-        "forks": 3211,
+        "forks": 3210,
         "watchers": 5983
     },
     {
@@ -13,9 +13,9 @@
         "url": "https://github.com/saadmk11/banking-system",
         "short_description": "A banking System Created Using Django Python Web Framework",
         "main_programing_language": "Python",
-        "stars": 60,
+        "stars": 59,
         "forks": 38,
-        "watchers": 60
+        "watchers": 59
     },
     {
         "full_name": "saadmk11/your-query",
