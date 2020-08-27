@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                             <p class="card-text">${repo.short_description}</p>
                             <p class="card-text">
                                 <span class="pr-4"><i class="fa fa-circle text-primary pr-2" aria-hidden="true"></i> ${repo.main_programing_language}</span>
-                                <span class="pr-4"><i class="fa fa-star-o text-warning pr-2" aria-hidden="true"></i> ${repo.stars}</span>
-                                <span class="pr-4"><i class="fa fa-code-fork text-success pr-2" aria-hidden="true"></i> ${repo.forks}</span>
-                                <span class="pr-4"><i class="fa fa-eye text-dark pr-2" aria-hidden="true"></i> ${repo.watchers}</span>
+                                <span class="pr-4"><i class="fas fa-star text-warning pr-2" aria-hidden="true"></i> ${repo.stars}</span>
+                                <span class="pr-4"><i class="fas fa-code-branch text-success pr-2" aria-hidden="true"></i> ${repo.forks}</span>
+                                <span class="pr-4"><i class="far fa-eye text-dark pr-2" aria-hidden="true"></i> ${repo.watchers}</span>
                             </p>
                         </div>
                     </div>
