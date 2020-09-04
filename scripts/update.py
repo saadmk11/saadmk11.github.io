@@ -19,7 +19,7 @@ def get_repositories_data(data):
             "short_description": response_data['description'],
             "stars": response_data['stargazers_count'],
             "forks": response_data['forks_count'],
-            "watchers": response_data['watchers_count']
+            "watchers": response_data['subscribers_count']
         })
         new_data.append(repo)
 
