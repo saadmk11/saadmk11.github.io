@@ -4,18 +4,18 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6000,
-        "forks": 3209,
-        "watchers": 6000
+        "stars": 6004,
+        "forks": 3211,
+        "watchers": 6004
     },
     {
         "full_name": "saadmk11/django-newsfeed",
         "url": "https://github.com/saadmk11/django-newsfeed",
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
-        "stars": 3,
+        "stars": 14,
         "forks": 0,
-        "watchers": 3
+        "watchers": 14
     },
     {
         "full_name": "saadmk11/banking-system",
@@ -29,10 +29,10 @@
     {
         "full_name": "saadmk11/changelog-ci",
         "url": "https://github.com/saadmk11/changelog-ci",
-        "short_description": "",
+        "short_description": "Changelog CI is a GitHub Action that generates changelog, prepends it to CHANGELOG.md file and commits it to a release pull request",
         "main_programing_language": "Python",
-        "stars": 0,
+        "stars": 4,
         "forks": 0,
-        "watchers": 0
+        "watchers": 4
     }
 ]
