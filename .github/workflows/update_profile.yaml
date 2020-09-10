@@ -5,7 +5,7 @@ on:
     branches:
       - master
   schedule:
-    - cron:  '0 0 * * 2,3,6'
+    - cron:  '0 */6 * * *'
 
 jobs:
 
@@ -30,8 +30,8 @@ jobs:
 
       - name: setup git config
         run: |
-          git config user.name ${{ secrets.USERNAME }}
-          git config user.email ${{ secrets.EMAIL }}
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
       - name: commit changes
         run: |
