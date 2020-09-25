@@ -14,8 +14,8 @@
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
         "stars": 133,
-        "forks": 6,
-        "watchers": 6
+        "forks": 7,
+        "watchers": 7
     },
     {
         "full_name": "saadmk11/banking-system",
@@ -32,7 +32,7 @@
         "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
         "stars": 43,
-        "forks": 1,
-        "watchers": 1
+        "forks": 2,
+        "watchers": 2
     }
 ]
