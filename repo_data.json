@@ -4,8 +4,8 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6278,
-        "forks": 3294,
+        "stars": 6279,
+        "forks": 3293,
         "watchers": 229
     },
     {
@@ -13,7 +13,7 @@
         "url": "https://github.com/saadmk11/django-newsfeed",
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
-        "stars": 148,
+        "stars": 149,
         "forks": 9,
         "watchers": 7
     },
