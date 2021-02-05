@@ -23,7 +23,7 @@
         "short_description": "A banking System Created Using Django Python Web Framework",
         "main_programing_language": "Python",
         "stars": 93,
-        "forks": 52,
+        "forks": 53,
         "watchers": 14
     },
     {
@@ -32,7 +32,7 @@
         "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
         "stars": 65,
-        "forks": 4,
+        "forks": 5,
         "watchers": 2
     }
 ]
