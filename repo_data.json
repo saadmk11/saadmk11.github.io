@@ -32,7 +32,7 @@
         "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
         "stars": 67,
-        "forks": 6,
+        "forks": 7,
         "watchers": 2
     }
 ]
