@@ -4,8 +4,8 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6339,
-        "forks": 3320,
+        "stars": 6340,
+        "forks": 3319,
         "watchers": 232
     },
     {
@@ -23,7 +23,7 @@
         "short_description": "A banking System Created Using Django Python Web Framework",
         "main_programing_language": "Python",
         "stars": 101,
-        "forks": 57,
+        "forks": 58,
         "watchers": 14
     },
     {
@@ -31,7 +31,7 @@
         "url": "https://github.com/saadmk11/changelog-ci",
         "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
-        "stars": 69,
+        "stars": 68,
         "forks": 8,
         "watchers": 2
     }
