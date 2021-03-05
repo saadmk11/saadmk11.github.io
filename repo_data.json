@@ -5,8 +5,8 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 6347,
-        "forks": 3320,
-        "watchers": 232
+        "forks": 3319,
+        "watchers": 231
     },
     {
         "full_name": "saadmk11/django-newsfeed",
