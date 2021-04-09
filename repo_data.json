@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6406,
+        "stars": 6404,
         "forks": 3337,
         "watchers": 231
     },
@@ -41,7 +41,7 @@
         "short_description": "GitHub Action Version Updater is GitHub Action that is used to update other GitHub Actions in a Repository and create a pull request with the updates. It is an automated dependency updater similar to GitHub's Dependabot, but for GitHub Actions.",
         "main_programing_language": "Python",
         "stars": 3,
-        "forks": 8,
+        "forks": 0,
         "watchers": 1
     }
 ]
