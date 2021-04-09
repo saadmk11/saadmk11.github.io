@@ -27,15 +27,6 @@
         "watchers": 2
     },
     {
-        "full_name": "saadmk11/banking-system",
-        "url": "https://github.com/saadmk11/banking-system",
-        "short_description": "A Banking System Concept Created Using Django Python Web Framework",
-        "main_programing_language": "Python",
-        "stars": 109,
-        "forks": 65,
-        "watchers": 15
-    },
-    {
         "full_name": "saadmk11/github-actions-version-updater",
         "url": "https://github.com/saadmk11/github-actions-version-updater",
         "short_description": "GitHub Action Version Updater is GitHub Action that is used to update other GitHub Actions in a Repository and create a pull request with the updates. It is an automated dependency updater similar to GitHub's Dependabot, but for GitHub Actions.",
@@ -43,5 +34,14 @@
         "stars": 3,
         "forks": 0,
         "watchers": 1
+    },
+    {
+        "full_name": "saadmk11/banking-system",
+        "url": "https://github.com/saadmk11/banking-system",
+        "short_description": "A Banking System Concept Created Using Django Python Web Framework",
+        "main_programing_language": "Python",
+        "stars": 109,
+        "forks": 65,
+        "watchers": 15
     }
 ]
