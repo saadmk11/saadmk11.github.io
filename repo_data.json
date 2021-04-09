@@ -18,6 +18,15 @@
         "watchers": 8
     },
     {
+        "full_name": "saadmk11/changelog-ci",
+        "url": "https://github.com/saadmk11/changelog-ci",
+        "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
+        "main_programing_language": "Python",
+        "stars": 70,
+        "forks": 8,
+        "watchers": 2
+    },
+    {
         "full_name": "saadmk11/banking-system",
         "url": "https://github.com/saadmk11/banking-system",
         "short_description": "A Banking System Concept Created Using Django Python Web Framework",
@@ -27,12 +36,12 @@
         "watchers": 15
     },
     {
-        "full_name": "saadmk11/changelog-ci",
-        "url": "https://github.com/saadmk11/changelog-ci",
-        "short_description": "Changelog CI is a GitHub Action that generates changelog, Then the changelog is committed and/or commented to the release Pull request.",
+        "full_name": "saadmk11/github-actions-version-updater",
+        "url": "https://github.com/saadmk11/github-actions-version-updater",
+        "short_description": "GitHub Action Version Updater is GitHub Action that is used to update other GitHub Actions in a Repository and create a pull request with the updates. It is an automated dependency updater similar to GitHub's Dependabot, but for GitHub Actions.",
         "main_programing_language": "Python",
-        "stars": 70,
+        "stars": 3,
         "forks": 8,
-        "watchers": 2
+        "watchers": 1
     }
 ]
