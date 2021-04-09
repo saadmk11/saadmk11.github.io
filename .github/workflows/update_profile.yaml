@@ -1,6 +1,7 @@
 name: Update My Resume
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - master
