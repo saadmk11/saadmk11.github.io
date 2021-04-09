@@ -29,7 +29,7 @@
     {
         "full_name": "saadmk11/github-actions-version-updater",
         "url": "https://github.com/saadmk11/github-actions-version-updater",
-        "short_description": "GitHub Action Version Updater is GitHub Action that is used to update other GitHub Actions in a Repository and create a pull request with the updates. It is an automated dependency updater similar to GitHub's Dependabot, but for GitHub Actions.",
+        "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
         "main_programing_language": "Python",
         "stars": 3,
         "forks": 0,
