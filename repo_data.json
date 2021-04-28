@@ -31,7 +31,7 @@
         "url": "https://github.com/saadmk11/github-actions-version-updater",
         "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
         "main_programing_language": "Python",
-        "stars": 14,
+        "stars": 15,
         "forks": 0,
         "watchers": 1
     },
