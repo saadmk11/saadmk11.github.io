@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6473,
+        "stars": 6472,
         "forks": 3357,
         "watchers": 229
     },
@@ -22,7 +22,7 @@
         "url": "https://github.com/saadmk11/changelog-ci",
         "short_description": "Changelog CI is a GitHub Action that generates changelog using merged pull requests or commit messages, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
-        "stars": 73,
+        "stars": 74,
         "forks": 8,
         "watchers": 2
     },
@@ -49,7 +49,7 @@
         "url": "https://github.com/saadmk11/logbook-cli",
         "short_description": "Keep Your Daily Events Recorded on Your Logbook Using Command Line",
         "main_programing_language": "Python",
-        "stars": 1,
+        "stars": 2,
         "forks": 0,
         "watchers": 1
     }
