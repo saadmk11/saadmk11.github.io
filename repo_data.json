@@ -47,7 +47,7 @@
     {
         "full_name": "saadmk11/logbook-cli",
         "url": "https://github.com/saadmk11/logbook-cli",
-        "short_description": "Keep Your Daily Events Recorded on Your Logbook Using Command Line",
+        "short_description": "Command Line Tool to Keep Your Daily Events Recorded. Made with Python, Typer & SQLAlchemy",
         "main_programing_language": "Python",
         "stars": 2,
         "forks": 0,
