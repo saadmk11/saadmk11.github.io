@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 6574,
-        "forks": 3406,
+        "forks": 3407,
         "watchers": 232
     },
     {
@@ -42,7 +42,7 @@
         "main_programing_language": "Python",
         "stars": 127,
         "forks": 79,
-        "watchers": 15
+        "watchers": 14
     },
     {
         "full_name": "saadmk11/logbook-cli",
