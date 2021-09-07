@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 6650,
-        "forks": 3438,
+        "forks": 3439,
         "watchers": 233
     },
     {
@@ -14,7 +14,7 @@
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
         "stars": 160,
-        "forks": 12,
+        "forks": 13,
         "watchers": 7
     },
     {
