@@ -6,7 +6,7 @@
         "main_programing_language": "Python",
         "stars": 6722,
         "forks": 3463,
-        "watchers": 234
+        "watchers": 233
     },
     {
         "full_name": "saadmk11/django-newsfeed",
@@ -22,7 +22,7 @@
         "url": "https://github.com/saadmk11/changelog-ci",
         "short_description": "Changelog CI is a GitHub Action that generates changelog using merged pull requests or commit messages, Then the changelog is committed and/or commented to the release Pull request.",
         "main_programing_language": "Python",
-        "stars": 81,
+        "stars": 82,
         "forks": 9,
         "watchers": 2
     },
