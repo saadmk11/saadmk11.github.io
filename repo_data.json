@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 6767,
-        "forks": 3488,
+        "forks": 3487,
         "watchers": 234
     },
     {
@@ -22,7 +22,7 @@
         "url": "https://github.com/saadmk11/changelog-ci",
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
-        "stars": 85,
+        "stars": 86,
         "forks": 9,
         "watchers": 1
     },
