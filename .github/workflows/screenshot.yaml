@@ -8,12 +8,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # Run Screenshot Comment Action
-    - name: Run Screenshot Comment Action
-      uses: saadmk11/comment-webpage-screenshot@main
-      with:
-        upload_to: github_branch
-        # Capture Screenshots of Changed HTML Files
-        capture_changed_html_files: yes
-        # Comma seperated paths to any other HTML File
-        capture_html_file_paths: "index.html"
+      - uses: actions/checkout@v2
+      # Run Screenshot Comment Action
+      - name: Run Screenshot Comment Action
+        uses: saadmk11/comment-webpage-screenshot@main
+        with:
+          upload_to: github_branch
+          # Capture Screenshots of Changed HTML Files
+          capture_changed_html_files: yes
+          # Comma seperated paths to any other HTML File
+          capture_html_file_paths: "index.html"
