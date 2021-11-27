@@ -27,11 +27,11 @@
         "watchers": 1
     },
     {
-        "full_name": "saadmk11/github-actions-version-updater",
-        "url": "https://github.com/saadmk11/github-actions-version-updater",
-        "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
+        "full_name": "saadmk11/comment-webpage-screenshot",
+        "url": "https://github.com/saadmk11/comment-webpage-screenshot",
+        "short_description": "A GitHub Action that Helps to Visually Review HTML file changes on a Pull Request by adding comments with the screenshots of the HTML file changes on the PR",
         "main_programing_language": "Python",
-        "stars": 16,
+        "stars": 9,
         "forks": 0,
         "watchers": 1
     },
@@ -45,11 +45,11 @@
         "watchers": 14
     },
     {
-        "full_name": "saadmk11/logbook-cli",
-        "url": "https://github.com/saadmk11/logbook-cli",
-        "short_description": "Command Line Tool to Keep Your Daily Events Recorded. Made with Python, Typer & SQLAlchemy",
+        "full_name": "saadmk11/github-actions-version-updater",
+        "url": "https://github.com/saadmk11/github-actions-version-updater",
+        "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
         "main_programing_language": "Python",
-        "stars": 3,
+        "stars": 16,
         "forks": 0,
         "watchers": 1
     }
