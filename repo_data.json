@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 6776,
+        "stars": 6775,
         "forks": 3489,
         "watchers": 234
     },
@@ -31,7 +31,7 @@
         "url": "https://github.com/saadmk11/comment-webpage-screenshot",
         "short_description": "A GitHub Action that Helps to Visually Review HTML file changes on a Pull Request by adding comments with the screenshots of the HTML file changes on the PR",
         "main_programing_language": "Python",
-        "stars": 9,
+        "stars": 11,
         "forks": 0,
         "watchers": 1
     },
