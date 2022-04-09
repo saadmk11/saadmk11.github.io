@@ -4,9 +4,9 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7007,
+        "stars": 7010,
         "forks": 3552,
-        "watchers": 236
+        "watchers": 237
     },
     {
         "full_name": "saadmk11/django-newsfeed",
