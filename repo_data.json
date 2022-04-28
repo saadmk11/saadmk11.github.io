@@ -23,7 +23,7 @@
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
         "stars": 91,
-        "forks": 11,
+        "forks": 12,
         "watchers": 1
     },
     {
