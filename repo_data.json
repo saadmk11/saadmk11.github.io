@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7046,
+        "stars": 7047,
         "forks": 3563,
         "watchers": 238
     },
@@ -23,7 +23,7 @@
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
         "stars": 91,
-        "forks": 12,
+        "forks": 13,
         "watchers": 1
     },
     {
