@@ -50,7 +50,7 @@
         "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
         "main_programing_language": "Python",
         "stars": 20,
-        "forks": 1,
+        "forks": 2,
         "watchers": 2
     }
 ]
