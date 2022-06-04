@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7096,
+        "stars": 7098,
         "forks": 3588,
         "watchers": 240
     },
@@ -41,8 +41,8 @@
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
         "stars": 197,
-        "forks": 125,
-        "watchers": 15
+        "forks": 126,
+        "watchers": 16
     },
     {
         "full_name": "saadmk11/github-actions-version-updater",
