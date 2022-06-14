@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 7106,
-        "forks": 3592,
+        "forks": 3594,
         "watchers": 241
     },
     {
@@ -15,7 +15,7 @@
         "main_programing_language": "Python",
         "stars": 163,
         "forks": 16,
-        "watchers": 9
+        "watchers": 10
     },
     {
         "full_name": "saadmk11/changelog-ci",
@@ -24,7 +24,7 @@
         "main_programing_language": "Python",
         "stars": 94,
         "forks": 13,
-        "watchers": 1
+        "watchers": 2
     },
     {
         "full_name": "saadmk11/comment-webpage-screenshot",
@@ -33,7 +33,7 @@
         "main_programing_language": "Python",
         "stars": 17,
         "forks": 3,
-        "watchers": 1
+        "watchers": 2
     },
     {
         "full_name": "saadmk11/banking-system",
@@ -42,7 +42,7 @@
         "main_programing_language": "Python",
         "stars": 198,
         "forks": 126,
-        "watchers": 16
+        "watchers": 17
     },
     {
         "full_name": "saadmk11/github-actions-version-updater",
@@ -51,6 +51,6 @@
         "main_programing_language": "Python",
         "stars": 20,
         "forks": 2,
-        "watchers": 2
+        "watchers": 3
     }
 ]
