@@ -32,7 +32,7 @@
         "short_description": "A GitHub Action that Helps to Visually Review HTML file changes on a Pull Request by adding comments with the screenshots of the HTML file changes on the PR",
         "main_programing_language": "Python",
         "stars": 17,
-        "forks": 2,
+        "forks": 3,
         "watchers": 1
     },
     {
