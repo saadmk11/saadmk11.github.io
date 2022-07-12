@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7148,
+        "stars": 7149,
         "forks": 3603,
         "watchers": 241
     },
@@ -15,7 +15,7 @@
         "main_programing_language": "Python",
         "stars": 166,
         "forks": 16,
-        "watchers": 10
+        "watchers": 9
     },
     {
         "full_name": "saadmk11/changelog-ci",
