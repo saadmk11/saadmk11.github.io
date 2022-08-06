@@ -40,7 +40,7 @@
         "url": "https://github.com/saadmk11/github-action-utils",
         "short_description": "Collection of python functions that can be used to run GitHub Action Workflow Commands ",
         "main_programing_language": "Python",
-        "stars": 40,
+        "stars": 41,
         "forks": 2,
         "watchers": 1
     },
