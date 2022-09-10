@@ -5,8 +5,8 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 7235,
-        "forks": 3625,
-        "watchers": 241
+        "forks": 3624,
+        "watchers": 240
     },
     {
         "full_name": "saadmk11/django-newsfeed",
@@ -23,7 +23,7 @@
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
         "stars": 98,
-        "forks": 12,
+        "forks": 13,
         "watchers": 2
     },
     {
@@ -50,7 +50,7 @@
         "short_description": "GitHub Actions Version Updater Updates All GitHub Action Versions in a Repository and Creates a Pull Request with the Changes.",
         "main_programing_language": "Python",
         "stars": 26,
-        "forks": 4,
+        "forks": 5,
         "watchers": 3
     }
 ]
