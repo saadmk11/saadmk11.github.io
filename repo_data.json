@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7294,
+        "stars": 7293,
         "forks": 3644,
         "watchers": 241
     },
@@ -50,7 +50,7 @@
         "short_description": "A GitHub Action that Updates All GitHub Actions in a Repository and Creates a Pull Request with the Updates",
         "main_programing_language": "Python",
         "stars": 34,
-        "forks": 5,
+        "forks": 7,
         "watchers": 4
     }
 ]
