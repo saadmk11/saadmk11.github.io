@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7309,
+        "stars": 7310,
         "forks": 3650,
         "watchers": 242
     },
@@ -51,6 +51,6 @@
         "main_programing_language": "Python",
         "stars": 36,
         "forks": 7,
-        "watchers": 4
+        "watchers": 5
     }
 ]
