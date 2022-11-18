@@ -50,7 +50,7 @@
         "short_description": "A GitHub Action that Updates All GitHub Actions in a Repository and Creates a Pull Request with the Updates",
         "main_programing_language": "Python",
         "stars": 36,
-        "forks": 7,
+        "forks": 8,
         "watchers": 5
     }
 ]
