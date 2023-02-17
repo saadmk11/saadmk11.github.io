@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 7447,
-        "forks": 3696,
+        "forks": 3697,
         "watchers": 240
     },
     {
@@ -13,7 +13,7 @@
         "url": "https://github.com/saadmk11/django-newsfeed",
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
-        "stars": 180,
+        "stars": 181,
         "forks": 17,
         "watchers": 10
     },
@@ -67,7 +67,7 @@
         "url": "https://github.com/saadmk11/python-third-party-imports",
         "short_description": "A Python CLI tool (Written in Rust) that finds all third-party packages imported into your Python project",
         "main_programing_language": "Rust",
-        "stars": 32,
+        "stars": 33,
         "forks": 0,
         "watchers": 1
     }
