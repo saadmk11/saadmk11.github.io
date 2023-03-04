@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7466,
+        "stars": 7465,
         "forks": 3704,
         "watchers": 240
     },
@@ -67,7 +67,7 @@
         "url": "https://github.com/saadmk11/python-third-party-imports",
         "short_description": "A Python CLI tool (Written in Rust) that finds all third-party packages imported into your Python project",
         "main_programing_language": "Rust",
-        "stars": 33,
+        "stars": 34,
         "forks": 0,
         "watchers": 1
     }
