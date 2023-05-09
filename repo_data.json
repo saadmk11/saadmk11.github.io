@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7559,
+        "stars": 7558,
         "forks": 3725,
         "watchers": 242
     },
@@ -22,7 +22,7 @@
         "url": "https://github.com/saadmk11/redis-search-django",
         "short_description": "Django package that provides auto indexing and searching capabilities for Django model instances using RediSearch.",
         "main_programing_language": "Python",
-        "stars": 79,
+        "stars": 80,
         "forks": 4,
         "watchers": 1
     },
