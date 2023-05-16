@@ -5,7 +5,7 @@
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
         "stars": 7567,
-        "forks": 3725,
+        "forks": 3726,
         "watchers": 242
     },
     {
@@ -50,7 +50,7 @@
         "short_description": "Collection of python functions that can be used to run GitHub Action Workflow Commands ",
         "main_programing_language": "Python",
         "stars": 65,
-        "forks": 4,
+        "forks": 5,
         "watchers": 1
     },
     {
