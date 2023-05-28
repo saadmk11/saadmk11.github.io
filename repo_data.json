@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7579,
+        "stars": 7580,
         "forks": 3729,
         "watchers": 243
     },
@@ -40,7 +40,7 @@
         "url": "https://github.com/saadmk11/banking-system",
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
-        "stars": 255,
+        "stars": 256,
         "forks": 166,
         "watchers": 19
     },
@@ -67,7 +67,7 @@
         "url": "https://github.com/saadmk11/python-third-party-imports",
         "short_description": "A Python CLI tool (Written in Rust) that finds all third-party packages imported into your Python project",
         "main_programing_language": "Rust",
-        "stars": 36,
+        "stars": 37,
         "forks": 0,
         "watchers": 1
     }
