@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7582,
+        "stars": 7583,
         "forks": 3729,
         "watchers": 243
     },
@@ -42,7 +42,7 @@
         "main_programing_language": "Python",
         "stars": 256,
         "forks": 166,
-        "watchers": 19
+        "watchers": 18
     },
     {
         "full_name": "saadmk11/github-action-utils",
