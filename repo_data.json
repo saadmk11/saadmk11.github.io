@@ -13,7 +13,7 @@
         "url": "https://github.com/saadmk11/django-newsfeed",
         "short_description": "A news curator and newsletter subscription package for Django",
         "main_programing_language": "Python",
-        "stars": 187,
+        "stars": 188,
         "forks": 18,
         "watchers": 11
     },
@@ -40,7 +40,7 @@
         "url": "https://github.com/saadmk11/banking-system",
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
-        "stars": 270,
+        "stars": 271,
         "forks": 171,
         "watchers": 19
     },
