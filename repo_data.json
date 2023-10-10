@@ -4,8 +4,8 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7729,
-        "forks": 3745,
+        "stars": 7730,
+        "forks": 3744,
         "watchers": 243
     },
     {
@@ -32,7 +32,7 @@
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
         "stars": 114,
-        "forks": 18,
+        "forks": 19,
         "watchers": 3
     },
     {
@@ -41,7 +41,7 @@
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
         "stars": 274,
-        "forks": 173,
+        "forks": 174,
         "watchers": 19
     },
     {
