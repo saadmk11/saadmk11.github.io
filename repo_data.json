@@ -4,7 +4,7 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7750,
+        "stars": 7751,
         "forks": 3740,
         "watchers": 243
     },
@@ -41,7 +41,7 @@
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
         "stars": 275,
-        "forks": 175,
+        "forks": 176,
         "watchers": 19
     },
     {
