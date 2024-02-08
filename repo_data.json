@@ -32,7 +32,7 @@
         "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
         "main_programing_language": "Python",
         "stars": 120,
-        "forks": 19,
+        "forks": 20,
         "watchers": 3
     },
     {
@@ -41,7 +41,7 @@
         "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
         "main_programing_language": "Python",
         "stars": 289,
-        "forks": 184,
+        "forks": 183,
         "watchers": 19
     },
     {
