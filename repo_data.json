@@ -4,8 +4,8 @@
         "url": "https://github.com/readthedocs/readthedocs.org",
         "short_description": "The source code that powers readthedocs.org",
         "main_programing_language": "Python",
-        "stars": 7963,
-        "forks": 3574,
+        "stars": 7961,
+        "forks": 3572,
         "watchers": 248
     },
     {
@@ -22,7 +22,7 @@
         "url": "https://github.com/saadmk11/redis-search-django",
         "short_description": "Django package that provides auto indexing and searching capabilities for Django model instances using RediSearch.",
         "main_programing_language": "Python",
-        "stars": 90,
+        "stars": 89,
         "forks": 6,
         "watchers": 2
     },
@@ -49,7 +49,7 @@
         "url": "https://github.com/saadmk11/github-action-utils",
         "short_description": "Collection of python functions that can be used to run GitHub Action Workflow Commands ",
         "main_programing_language": "Python",
-        "stars": 76,
+        "stars": 77,
         "forks": 6,
         "watchers": 2
     },
