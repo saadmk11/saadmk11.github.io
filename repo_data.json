@@ -1,71 +1,71 @@
 [
     {
+        "full_name": "djangopackages/djangopackages",
+        "url": "https://github.com/djangopackages/djangopackages",
+        "short_description": "About Django Packages is a directory of reusable apps, sites, tools, and more for your Django projects.",
+        "main_programing_language": "Python",
+        "stars": 915,
+        "forks": 195,
+        "watchers": 22
+    },
+    {
         "full_name": "readthedocs/readthedocs.org",
         "url": "https://github.com/readthedocs/readthedocs.org",
-        "short_description": "The source code that powers readthedocs.org",
+        "short_description": "The source code that powers readthedocs.org. Contributed to database normalization, improved Elasticsearch performance by 15%, and unified Django settings.",
         "main_programing_language": "Python",
-        "stars": 8067,
-        "forks": 3594,
+        "stars": 8300,
+        "forks": 3700,
         "watchers": 250
     },
     {
         "full_name": "saadmk11/django-newsfeed",
         "url": "https://github.com/saadmk11/django-newsfeed",
-        "short_description": "A news curator and newsletter subscription package for Django",
+        "short_description": "A Django package to create a news curator and newsletter subscription application.",
         "main_programing_language": "Python",
         "stars": 194,
         "forks": 20,
         "watchers": 11
     },
     {
-        "full_name": "saadmk11/redis-search-django",
-        "url": "https://github.com/saadmk11/redis-search-django",
-        "short_description": "Django package that provides auto indexing and searching capabilities for Django model instances using RediSearch.",
-        "main_programing_language": "Python",
-        "stars": 91,
-        "forks": 7,
-        "watchers": 2
-    },
-    {
         "full_name": "saadmk11/changelog-ci",
         "url": "https://github.com/saadmk11/changelog-ci",
-        "short_description": "Changelog CI is a GitHub Action that enables a project to automatically generate changelogs",
+        "short_description": "GitHub Action that automatically generates changelogs using merged pull requests or commit messages.",
         "main_programing_language": "Python",
         "stars": 130,
         "forks": 20,
         "watchers": 3
     },
     {
-        "full_name": "saadmk11/banking-system",
-        "url": "https://github.com/saadmk11/banking-system",
-        "short_description": "A Banking System Concept Created Using Django Python Web Framework and Tailwind CSS",
+        "full_name": "saadmk11/redis-search-django",
+        "url": "https://github.com/saadmk11/redis-search-django",
+        "short_description": "Django package that provides auto indexing and searching capabilities for Django models using RediSearch.",
         "main_programing_language": "Python",
-        "stars": 325,
-        "forks": 198,
-        "watchers": 19
-    },
-    {
-        "full_name": "saadmk11/github-action-utils",
-        "url": "https://github.com/saadmk11/github-action-utils",
-        "short_description": "Collection of python functions that can be used to run GitHub Action Workflow Commands ",
-        "main_programing_language": "Python",
-        "stars": 79,
-        "forks": 6,
+        "stars": 92,
+        "forks": 7,
         "watchers": 2
     },
     {
         "full_name": "saadmk11/github-actions-version-updater",
         "url": "https://github.com/saadmk11/github-actions-version-updater",
-        "short_description": "A GitHub Action that Updates All GitHub Actions in a Repository and Creates a Pull Request with the Updates",
+        "short_description": "A GitHub Action that updates all GitHub Actions in a repository and creates a Pull Request with the updates.",
         "main_programing_language": "Python",
         "stars": 93,
         "forks": 15,
         "watchers": 6
     },
     {
+        "full_name": "saadmk11/drf-test-generator",
+        "url": "https://github.com/saadmk11/drf-test-generator",
+        "short_description": "Generates basic unittest and pytest style tests for Django REST Framework ViewSets.",
+        "main_programing_language": "Python",
+        "stars": 25,
+        "forks": 4,
+        "watchers": 2
+    },
+    {
         "full_name": "saadmk11/python-third-party-imports",
         "url": "https://github.com/saadmk11/python-third-party-imports",
-        "short_description": "A Python CLI tool (Written in Rust) that finds all third-party packages imported into your Python project",
+        "short_description": "A Python CLI tool (Written in Rust) that finds all third-party packages imported in your Python project.",
         "main_programing_language": "Rust",
         "stars": 37,
         "forks": 0,

@@ -1,309 +1,743 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Khandker Maksudul Haque</title>
+        <meta
+            name="description"
+            content="Portfolio of Khandker Maksudul Haque - Software Engineer, Python/Django Developer, and Open Source Contributor."
+        />
+        <meta name="author" content="Khandker Maksudul Haque" />
+        <title>Khandker Maksudul Haque | Software Engineer</title>
 
-        <!-- Bootstrap -->
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                darkMode: "class",
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: "#3b82f6",
+                        },
+                    },
+                },
+            };
+        </script>
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+        <!-- Custom Styles -->
         <style>
-            @media screen and (min-width: 800px) {
-                #sidebar {
-                    position: fixed;
-                    height: 100%;
-                }
+            /* Custom scrollbar for webkit */
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+            .dark ::-webkit-scrollbar-track {
+                background: #1e293b;
+            }
+            ::-webkit-scrollbar-thumb {
+                background: #888;
+                border-radius: 4px;
+            }
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
             }
         </style>
-        <script src="main.js"></script>
     </head>
-    <body class="bg-light">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2 col-sm-12 ml-md-5 mr-md-3 pt-3">
-                    <div id="sidebar" class="col-md-2 col-xs-12 pt-0">
-                        <div class="card">
-                            <img src="https://avatars1.githubusercontent.com/u/24854406" class="card-img-top" alt="Profile Picture" />
-                            <div class="card-body">
-                                <h4 class="card-title text-center"><b>Khandker Maksudul Haque</b></h4>
-                                <p class="card-text text-secondary text-center">Software Engineer, Open Source Contributor/Maintainer, Python, Django Developer</p>
-                            </div>
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item d-flex justify-content-around pl-5 pr-5">
-                                    <a href="https://twitter.com/saad_mk11" target="_blank" class="text-dark"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
-                                    <a href="https://github.com/saadmk11" target="_blank" class="text-dark"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
-                                    <a href="https://www.linkedin.com/in/saadmk11/" target="_blank" class="text-dark"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
-                                    <a href="https://dev.to/saadmk11" target="_blank" class="text-dark"><i class="fab fa-dev fa-lg" aria-hidden="true"></i></a>
-                                </li>
-                                <li class="list-group-item"><i class="fa fa-bookmark pr-2" aria-hidden="true"></i><small>Python, Django, Rust, JavaScript, Docker, Elasticsearch, Git</small></li>
-                                <li class="list-group-item"><i class="fa fa-envelope pr-2" aria-hidden="true"></i><a href="mailto:saad.mk112@gmail.com" class="text-dark"><small>saad.mk112@gmail.com</small></a></li>
-                                <li class="list-group-item"><i class="fa fa-map-marker pr-2" aria-hidden="true"></i><small>Dhaka, Bangladesh</small></li>
+    <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+        <!-- Dark Mode Toggle -->
+        <button
+            id="theme-toggle"
+            type="button"
+            class="fixed top-4 right-4 z-50 text-gray-500 dark:text-gray-400 bg-white dark:bg-slate-800 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 border border-gray-200 dark:border-gray-700"
+        >
+            <svg
+                id="theme-toggle-dark-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg
+                id="theme-toggle-light-icon"
+                class="hidden w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                ></path>
+            </svg>
+        </button>
 
-                            </ul>
+        <div class="container mx-auto px-4 py-8 max-w-7xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Sidebar / Profile Section -->
+                <div class="lg:col-span-3">
+                    <div class="lg:sticky lg:top-8 space-y-6">
+                        <div
+                            class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 text-center border border-slate-200 dark:border-slate-700"
+                        >
+                            <div class="relative w-32 h-32 mx-auto mb-4">
+                                <img
+                                    src="https://avatars1.githubusercontent.com/u/24854406"
+                                    class="rounded-full object-cover w-full h-full border-4 border-blue-500 shadow-md"
+                                    alt="Khandker Maksudul Haque"
+                                />
+                            </div>
+                            <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                                Khandker Maksudul Haque
+                            </h1>
+                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                                Software Engineer & Open Source Maintainer
+                            </p>
+
+                            <div class="flex flex-wrap justify-center gap-2 mb-6">
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                                    >Python</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-200"
+                                    >Django</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
+                                    >AWS</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-purple-100 text-purple-800 rounded-full dark:bg-purple-900 dark:text-purple-200"
+                                    >FastAPI</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-indigo-100 text-indigo-800 rounded-full dark:bg-indigo-900 dark:text-indigo-200"
+                                    >Docker</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-teal-100 text-teal-800 rounded-full dark:bg-teal-900 dark:text-teal-200"
+                                    >Celery</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-red-100 text-red-800 rounded-full dark:bg-red-900 dark:text-red-200"
+                                    >Redis</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-cyan-100 text-cyan-800 rounded-full dark:bg-cyan-900 dark:text-cyan-200"
+                                    >PostgreSQL</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full dark:bg-gray-700 dark:text-gray-200"
+                                    >Git</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-pink-100 text-pink-800 rounded-full dark:bg-pink-900 dark:text-pink-200"
+                                    >Elasticsearch</span
+                                >
+                                <span
+                                    class="px-2.5 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
+                                    >JavaScript</span
+                                >
+                            </div>
+
+                            <div class="flex justify-center space-x-4 mb-6">
+                                <a
+                                    href="https://github.com/saadmk11"
+                                    target="_blank"
+                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
+                                    aria-label="GitHub"
+                                >
+                                    <i class="fa-brands fa-github text-2xl"></i>
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/in/saadmk11/"
+                                    target="_blank"
+                                    class="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"
+                                    aria-label="LinkedIn"
+                                >
+                                    <i class="fa-brands fa-linkedin text-2xl"></i>
+                                </a>
+                                <a
+                                    href="https://x.com/saad_mk11"
+                                    target="_blank"
+                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
+                                    aria-label="X"
+                                >
+                                    <i class="fa-brands fa-x-twitter text-2xl"></i>
+                                </a>
+                                <a
+                                    href="https://fosstodon.org/@saadmk11"
+                                    target="_blank"
+                                    class="text-slate-600 hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400 transition-colors"
+                                    aria-label="Mastodon"
+                                >
+                                    <i class="fa-brands fa-mastodon text-2xl"></i>
+                                </a>
+                                <a
+                                    href="https://dev.to/saadmk11"
+                                    target="_blank"
+                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
+                                    aria-label="Dev.to"
+                                >
+                                    <i class="fa-brands fa-dev text-2xl"></i>
+                                </a>
+                            </div>
+
+                            <div
+                                class="space-y-3 text-left text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700 pt-4"
+                            >
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-envelope w-5 text-center text-blue-500"></i>
+                                    <a href="mailto:saad.mk112@gmail.com" class="hover:underline"
+                                        >saad.mk112@gmail.com</a
+                                    >
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-map-marker-alt w-5 text-center text-red-500"></i>
+                                    <span>Dhaka, Bangladesh</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-globe w-5 text-center text-green-500"></i>
+                                    <a href="https://blog.maksudul.bd" class="hover:underline">blog.maksudul.bd</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-9 pt-3">
-                    <div class="row">
-                        <div id="content" class="col-sm-12">
-                            <div class="card">
-                                <h5 class="card-header">Open Source Projects</h5>
-                                <div class="card-body bg-light">
-                                    <div id="openSourceRepos" class="row"></div>
+
+                <!-- Main Content -->
+                <div class="lg:col-span-9 space-y-8">
+                    <!-- About Section -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                            <i class="fas fa-user-circle text-blue-500"></i> About Me
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            I'm a software engineer focused on backend development and infrastructure using Python,
+                            Django, and AWS. Currently at
+                            <a
+                                href="https://www.neliti.com/"
+                                target="_blank"
+                                class="font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
+                            >
+                                Neliti <i class="fas fa-external-link-alt text-xs"></i> </a
+                            >, I work on backend services, CI/CD automation, and production deployments. Alongside my
+                            day-to-day work, I'm one of the maintainers of
+                            <span class="font-semibold">Django Packages</span> and contribute to open-source projects
+                            such as <span class="font-semibold">Read the Docs</span>,
+                            <span class="font-semibold">Ruff</span> etc, helping improve tools used by developers
+                            worldwide.
+                        </p>
+                    </section>
+
+                    <!-- Work Experience -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-briefcase text-blue-500"></i> Work Experience
+                        </h2>
+
+                        <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3 space-y-8">
+                            <!-- Neliti -->
+                            <div class="ml-6 relative">
+                                <span
+                                    class="absolute -left-[31px] top-1 bg-blue-500 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
+                                ></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineer</h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                                    <a
+                                        href="https://www.neliti.com/"
+                                        target="_blank"
+                                        class="hover:underline inline-flex items-center gap-1"
+                                        >Neliti Pty Ltd <i class="fas fa-external-link-alt text-xs"></i
+                                    ></a>
+                                    <span class="text-slate-400 text-sm font-normal"
+                                        >• Aug 2021 - Present • Singapore (Remote)</span
+                                    >
                                 </div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm mb-2">
+                                    Indonesia's largest research repository.
+                                </p>
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
+                                    <li>Migrated infrastructure to AWS ECS, reducing costs by 25%.</li>
+                                    <li>Automated deployments with GitHub Actions, enabling zero-downtime releases.</li>
+                                    <li>
+                                        Implemented PDF compression via AWS Lambda, reducing server load by 15% and cost
+                                        by 5%.
+                                    </li>
+                                    <li>
+                                        Built a custom domain service allowing customers to serve content from their own
+                                        domains automatically.
+                                    </li>
+                                    <li>
+                                        Revamped dependency management using pip-tools and GitHub Actions, removing 90%
+                                        of manual work.
+                                    </li>
+                                    <li>Developed API v2 with role-based permissions using DRF.</li>
+                                    <li>
+                                        Integrated and automated DOI (Digital Object Identifier) registration using
+                                        Crossref.
+                                    </li>
+                                    <li>Implemented an Elasticsearch-based search engine for searching articles.</li>
+                                    <li>
+                                        Fixed memory leaks and thread-safety issues, pushing a patch to an upstream
+                                        open-source package.
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="card mt-3">
-                                <h5 class="card-header">Work Experience</h5>
-                                <div class="card-body bg-light">
-                                    <div class="row pt-2">
-                                        <div class="col-sm-12 pt-0 mt-0">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>Software Engineer at Neliti Pty Ltd, Jakarta, Indonesia</b> <span class="text-muted">(Aug 2021 - Present)</span>
-                                                    </h6>
-                                                    <p class="text-secondary">
-                                                        Neliti (<a href="https://www.neliti.com/" target="_blank">neliti.com</a>) is <b>Indonesia's largest user-generated research repository</b> with millions of monthly users.
-                                                        It is indexed by major online libraries including <b>Google Scholar</b>.<br>
-                                                    </p>
-                                                    <ul>
-                                                        <li>Moved production infrastructure to AWS Elastic Container Service which decreased server cost by 25% and enabled zero-downtime deployments.</li>
-                                                        <li>Automated Deployment with GitHub Actions which made releasing new changes much faster.</li>
-                                                        <li>Added custom domain service for customers to serve content from their own domain automatically.</li>
-                                                        <li>Implemented PDF file compression with AWS Lambda that reduced server load by 15% and cost by 5%.</li>
-                                                        <li>Revamped dependency management with pip-tools and GitHub Actions removing 90% manual work.</li>
-                                                        <li>Implemented API Version 2 with role based permissions using Django REST Framework.</li>
-                                                        <li>Fixed memory leak and thread-safety (pushed patch to upstream open-source package) issues.</li>
-                                                        <li>Integrated and Automated DOI (Digital Object Identifier) Registration using Crossref DOI service.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pt-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>Software Developer at The SmartLabs, Hyderabad, India</b> <span class="text-muted">(Jan 2018 - Jul 2021)</span>
-                                                    </h6>
-                                                    <p class="text-secondary">
-                                                        The SmartLabs is a firm that provides a diagnostic test booking service and builds external client applications.<br>
-                                                    </p>
-                                                    <ul>
-                                                        <li>Built Diagnostic Test Booking and Online Payment System using PayTM, RazorPay.</li>
-                                                        <li>Developed an E-commerce platform with Online Payment System for Pet Products.</li>
-                                                        <li>Integrated Shipment Providers for shipping and tracking products that eliminated 95% manual work.</li>
-                                                        <li>Implemented REST API with Django REST Framework that is used as a backend for the mobile app.</li>
-                                                        <li>Updated Python version from 2.7 to 3.6.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pt-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>My Class Manager / Side Project</b> <span class="text-muted">(2020)</span>
-                                                    </h6>
-                                                    <p class="text-secondary">
-                                                        This is a Django web application that helps students to manage their classes and
-                                                        keep track of their tasks.<br>
-                                                        it uses celery to send email reminders to students about their due tasks.<br>
-                                                    </p>
-                                                    <b class="pb-2"><a href="https://www.myclassmanager.me/" target="_blank">www.myclassmanager.me</a></b>
-                                                    <ul>
-                                                        <li>Social Signup Support (Google, Facebook)</li>
-                                                        <li>Integrated Elasticsearch for users task search page</li>
-                                                        <li>Semester, Course and Course Task Management Functionality</li>
-                                                        <li>Students Can View Their Weekly Class Schedule</li>
-                                                        <li>Add and Change the Status of the Course Tasks</li>
-                                                        <li>Email Reminder for Tasks That Are Close to The Due Date</li>
-                                                        <li>REST API for Mobile App (<a href="https://play.google.com/store/apps/details?id=me.myclassmanager">Google Play Store</a>)</li>
-                                                        <li>Push Notification Support for Due Tasks</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pt-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>Google Summer of Code 2019 at Read the Docs</b> <span class="text-muted">(May 2019 - Aug 2019)</span>
-                                                    </h6>
-                                                    <p class="text-secondary">
-                                                        Read the Docs (<a href="https://www.readthedocs.org/" target="_blank">readthedocs.org</a>) is the world's largest documentation hosting service that serves over 55 million pages per month.
-                                                        Blog Post on this: <a href="https://blog.readthedocs.com/building-docs-for-pull-requests/" target="_blank">GSOC 2019: Autobuild Documentation for Pull Requests</a>
-                                                    </p>
-                                                    <ul>
-                                                        <li>Worked with The Core Team at Read the Docs for 3.5 Months as a student developer.</li>
-                                                        <li>Architected a Continuous Integration (CI) System for Read the Docs documentation platform which is now used by thousands of projects (e.g. Flask, Pytest Documentation).</li>
-                                                        <li>Developed a feature to build documentation whenever a pull request is created and send build status notification to the providers’ (Github, Gitlab) status API.</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pt-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>Open Source Contribution</b>
-                                                    </h6>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="https://github.com/readthedocs/readthedocs.org" target="_blank"><b>readthedocs.org</b></a>
-                                                            <ul>
-                                                                <li>Worked on a database normalization project at Read the Docs with their core team<br>
-                                                                    which affected tables with millions of rows and improved user experience on project import from GitHub, GitLab and
-                                                                    BitBucket.<br>
-                                                                    Details: <a href="https://dev.readthedocs.io/en/latest/design/refactor-remote-repository.html" target="_blank"><b>Refactor RemoteRepository Design Document</b></a></li>
-                                                                <li>Improved Elasticsearch Index performance.</li>
-                                                                <li>Improved page performance by optimizing database query performance.</li>
-                                                                <li>Added APIv3 endpoints and filters with Django REST Framework.</li>
-                                                                <li>Unified and Standardize Django Settings.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://github.com/charliermarsh/ruff" target="_blank"><b>Ruff (Python linter, written in Rust)</b></a>
-                                                            <ul>
-                                                                <li>Added rules for various plugins such as flake8-bandit, isort, flake8-self, pygrep-hooks.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://github.com/djangopackages/djangopackages" target="_blank"><b>djangopackages.org</b></a>
-                                                            <ul>
-                                                                <li>Improved page performance by shaving off 4 million Database Queries/Month.</li>
-                                                                <li>Fixed search bugs and added search filters.</li>
-                                                                <li>Added OpenGraph tags to all pages.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://github.com/django/djangoproject.com" target="_blank"><b>djangoproject.com</b></a>
-                                                            <ul>
-                                                                <li>Improved page performance by decreasing database queries.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://github.com/django-es/django-elasticsearch-dsl" target="_blank"><b>django-elasticsearch-dsl</b></a>
-                                                            <ul>
-                                                                <li>Moved Test Suite from TravisCI to GitHub Actions.</li>
-                                                                <li>Added Django signals.</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li>
-                                                            <a href="https://github.com/python/bedevere" target="_blank"><b>bedevere (CPython pull request helper Bot)</b></a>
-                                                            <ul>
-                                                                <li>Added functionality to add GitHub Pull Request link to GitHub Issues</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pt-3">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title text-primary">
-                                                        <i class="fa fa-briefcase"></i>
-                                                        <b>Freelance Projects</b>
-                                                    </h6>
-                                                    <p>
-                                                        <b>Awareness Website:</b> A Project by Fresh Tissue to spread awareness for Bangla New Year. The website was created using Django. Features include Social Login, User
-                                                        Certification, User posts including image/video of a location marking it as safe/unsafe, filtering posts by status and location.
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                            <!-- The SmartLabs -->
+                            <div class="ml-6 relative">
+                                <span
+                                    class="absolute -left-[31px] top-1 bg-slate-300 dark:bg-slate-600 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
+                                ></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Developer</h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                                    The SmartLabs
+                                    <span class="text-slate-400 text-sm font-normal"
+                                        >• Jan 2018 - Jul 2021 • India (Remote)</span
+                                    >
                                 </div>
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
+                                    <li>
+                                        Built diagnostic test booking and online payment systems using PayTM and
+                                        RazorPay.
+                                    </li>
+                                    <li>
+                                        Developed e-commerce platforms for pet products with online payment and customer
+                                        notifications.
+                                    </li>
+                                    <li>
+                                        Integrated shipment providers for tracking products, eliminating 95% of manual
+                                        work.
+                                    </li>
+                                    <li>Implemented REST APIs with Django REST Framework for mobile applications.</li>
+                                    <li>Migrated legacy codebases from Python 2.7 to 3.6.</li>
+                                </ul>
                             </div>
-                            <div class="card mt-3">
-                                <h5 class="card-header">Blog Posts</h5>
-                                <div class="card-body bg-light">
-                                    <div class="row pt-2">
-                                        <div class="col-sm-12 pb-1">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">
-                                                        <i class="fa fa-rss-square text-primary"></i>
-                                                        <a href="https://blog.readthedocs.com/building-docs-for-pull-requests/#gsoc-2019-autobuild-documentation-for-pull-requests" target="_blank">
-                                                            <b>GSOC 2019: Autobuild Documentation for Pull Requests</b>
-                                                        </a>
-                                                    </h6>
-                                                    <p class="card-text">This is a blog post about my GSoC 2019 Project.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pb-1">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">
-                                                        <i class="fa fa-rss-square text-primary"></i>
-                                                        <a href="https://dev.to/saadmk11/how-i-use-github-actions-to-keep-my-resume-up-to-date-using-scheduled-events-21j2" target="_blank">
-                                                            <b>How I Use GitHub Actions to Keep My Resume Up to date Using Scheduled Events</b>
-                                                        </a>
-                                                    </h6>
-                                                    <p class="card-text">This is a blog post about How I Use GitHub Actions to Keep My Resume Up to date Using Scheduled Events.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pb-1">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">
-                                                        <i class="fa fa-rss-square text-primary"></i>
-                                                        <a href="https://dev.to/saadmk11/create-a-news-curator-and-news-subscription-app-using-django-1ghj" target="_blank">
-                                                            <b>Create a News-Curator and News Subscription App using Django</b>
-                                                        </a>
-                                                    </h6>
-                                                    <p class="card-text">This is a blog post about how to use my django package <a href="https://github.com/saadmk11/django-newsfeed" target="_blank">django-newsfeed</a>.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pb-1">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">
-                                                        <i class="fa fa-rss-square text-primary"></i>
-                                                        <a href="https://dev.to/saadmk11/github-actions-changelog-ci-4ojh" target="_blank">
-                                                            <b>Changelog CI (Commit and/or Comment Auto-generated Changelog to Pull Request using GitHub Actions)</b>
-                                                        </a>
-                                                    </h6>
-                                                    <p class="card-text">This is a blog post about my GitHub Action <a href="https://github.com/marketplace/actions/changelog-ci" target="_blank">Changelog CI</a>.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-sm-12 pb-1">
-                                            <div class="card">
-                                                <div class="card-body">
-                                                    <h6 class="card-title">
-                                                        <i class="fa fa-rss-square text-primary"></i>
-                                                        <a href="https://dev.to/saadmk11/github-actions-version-updater-similar-to-github-s-dependabot-but-for-github-actions-2g2i" target="_blank">
-                                                            <b>GitHub Actions Version Updater, Similar to GitHub's Dependabot, but for GitHub Actions</b>
-                                                        </a>
-                                                    </h6>
-                                                    <p class="card-text">This is a blog post about my GitHub Action <a href="https://github.com/saadmk11/github-actions-version-updater" target="_blank">GitHub Actions Version Updater</a>.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                            <!-- GSoC -->
+                            <div class="ml-6 relative">
+                                <span
+                                    class="absolute -left-[31px] top-1 bg-slate-300 dark:bg-slate-600 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
+                                ></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                    Google Summer of Code Developer
+                                </h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                                    <a
+                                        href="https://readthedocs.org/"
+                                        target="_blank"
+                                        class="hover:underline inline-flex items-center gap-1"
+                                        >Read the Docs <i class="fas fa-external-link-alt text-xs"></i
+                                    ></a>
+                                    <span class="text-slate-400 text-sm font-normal">• May 2019 - Aug 2019</span>
+                                </div>
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
+                                    <li>Architected a CI system for documentation builds on Pull Requests.</li>
+                                    <li>
+                                        Developed features to build documentation on PR creation and send status
+                                        notifications to GitHub/GitLab APIs.
+                                    </li>
+                                    <li class="mt-2 list-none">
+                                        <a
+                                            href="https://blog.readthedocs.com/building-docs-for-pull-requests/"
+                                            target="_blank"
+                                            class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline"
+                                            ><i class="fas fa-external-link-alt text-xs"></i> Read Project Blog Post</a
+                                        >
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Education -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-graduation-cap text-indigo-500"></i> Education
+                        </h2>
+                        <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3">
+                            <div class="ml-6 relative">
+                                <span
+                                    class="absolute -left-[31px] top-1 bg-indigo-500 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
+                                ></span>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+                                    Bachelor of Computer Science and Engineering
+                                </h3>
+                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
+                                    International University of Business Agriculture & Technology
+                                    <span class="text-slate-400 text-sm font-normal"
+                                        >• May 2018 - Apr 2022 • Bangladesh</span
+                                    >
+                                </div>
+                                <p class="text-slate-600 dark:text-slate-300 text-sm">
+                                    <span class="font-semibold">CGPA:</span> 3.70 (out of 4)
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Open Source Contributions -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-code-branch text-green-500"></i> Key Open Source Contributions
+                        </h2>
+                        <div class="grid grid-cols-1 gap-6">
+                            <!-- Django Packages -->
+                            <div
+                                class="p-6 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                            >
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-bold text-xl text-slate-900 dark:text-white">
+                                        <a
+                                            href="https://djangopackages.org"
+                                            target="_blank"
+                                            class="hover:text-blue-500 flex items-center gap-2"
+                                        >
+                                            Django Packages
+                                            <i class="fas fa-external-link-alt text-xs text-slate-400"></i>
+                                        </a>
+                                    </h3>
+                                    <span
+                                        class="px-3 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-200"
+                                        >Maintainer</span
+                                    >
+                                </div>
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-2">
+                                    <li>
+                                        Migrated legacy templates to <strong>Tailwind CSS</strong>, boosting
+                                        responsiveness and maintainability.
+                                    </li>
+                                    <li>
+                                        Eliminated <strong>N+1 queries</strong> and added caching, cutting database load
+                                        by <strong>4M+ queries/month</strong>.
+                                    </li>
+                                    <li>
+                                        Boosted SEO and social engagement via optimized metadata, sitemaps, and
+                                        OpenGraph support.
+                                    </li>
+                                    <li>
+                                        Upgraded to <strong>Python 3.11</strong> and <strong>Django 5</strong> for
+                                        better security and performance.
+                                    </li>
+                                    <li>Replaced cron jobs with <strong>Django-Q</strong> task system.</li>
+                                    <li>
+                                        Optimized high-concurrency throughput by migrating to
+                                        <strong>psycopg3</strong> with native pooling.
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Read the Docs -->
+                            <div
+                                class="p-6 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                            >
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="font-bold text-xl text-slate-900 dark:text-white">
+                                        <a
+                                            href="https://readthedocs.org"
+                                            target="_blank"
+                                            class="hover:text-blue-500 flex items-center gap-2"
+                                        >
+                                            Read the Docs
+                                            <i class="fas fa-external-link-alt text-xs text-slate-400"></i>
+                                        </a>
+                                    </h3>
+                                    <span
+                                        class="px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                                        >Contributor</span
+                                    >
+                                </div>
+                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-2">
+                                    <li>
+                                        Collaborated with the core team on
+                                        <strong>database normalization</strong> affecting millions of rows.
+                                        <a
+                                            href="https://github.com/readthedocs/readthedocs.org/pulls?q=is%3Apr+is%3Amerged+author%3Asaadmk11+RemoteRepository"
+                                            target="_blank"
+                                            class="text-blue-600 dark:text-blue-400 hover:underline ml-1"
+                                            >(<i class="fas fa-file-alt text-xs"></i> My Work)</a
+                                        >
+                                    </li>
+                                    <li>
+                                        Improved <strong>Elasticsearch</strong> index and search performance by
+                                        <strong>15%</strong>.
+                                    </li>
+                                    <li>Unified and standardized Django settings across the platform.</li>
+                                    <li>Developed API v3 endpoints and filters using Django REST Framework.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Other Contributions Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div
+                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all flex flex-col"
+                                >
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                            <a
+                                                href="https://github.com/astral-sh/ruff"
+                                                target="_blank"
+                                                class="hover:text-blue-500 flex items-center gap-2"
+                                                >Ruff (Python linter) <i class="fas fa-external-link-alt text-xs text-slate-400"></i
+                                            ></a>
+                                        </h3>
+                                        <span
+                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                                            >Contributor</span
+                                        >
                                     </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Implemented linter rules for plugins including <code>flake8-bandit</code>,
+                                        <code>isort</code>, <code>flake8-self</code>, and <code>pygrep-hooks</code>.
+                                    </p>
+                                </div>
+                                <div
+                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all flex flex-col"
+                                >
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                            <a
+                                                href="https://github.com/django-es/django-elasticsearch-dsl"
+                                                target="_blank"
+                                                class="hover:text-blue-500 flex items-center gap-2"
+                                                >django-elasticsearch-dsl
+                                                <i class="fas fa-external-link-alt text-xs text-slate-400"></i
+                                            ></a>
+                                        </h3>
+                                        <span
+                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                                            >Contributor</span
+                                        >
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Migrated Test Suite from TravisCI to <strong>GitHub Actions</strong> and
+                                        implemented Django signals for better integration.
+                                    </p>
+                                </div>
+                                <div
+                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all md:col-span-2 flex flex-col"
+                                >
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
+                                            <a
+                                                href="https://www.djangoproject.com"
+                                                target="_blank"
+                                                class="hover:text-blue-500 flex items-center gap-2"
+                                                >djangoproject.com
+                                                <i class="fas fa-external-link-alt text-xs text-slate-400"></i
+                                            ></a>
+                                        </h3>
+                                        <span
+                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
+                                            >Contributor</span
+                                        >
+                                    </div>
+                                    <p class="text-sm text-slate-600 dark:text-slate-300">
+                                        Improved overall page performance by analyzing and optimizing database queries.
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+
+                    <!-- Projects Section -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                            <i class="fas fa-laptop-code text-purple-500"></i> Featured Projects
+                        </h2>
+                        <div id="openSourceRepos" class="flex flex-wrap -m-2">
+                            <!-- Content loaded via main.js -->
+                            <div class="w-full text-center py-8 text-slate-500">
+                                <i class="fas fa-spinner fa-spin fa-2x"></i>
+                                <p class="mt-2">Loading repositories...</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Blog Posts -->
+                    <section
+                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
+                    >
+                        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i class="fas fa-rss text-orange-500"></i> Recent Articles
+                            </h2>
+                            <div class="flex gap-3">
+                                <a
+                                    href="https://blog.maksudul.bd/"
+                                    target="_blank"
+                                    class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                                >
+                                    blog.maksudul.bd <i class="fas fa-external-link-alt text-xs"></i>
+                                </a>
+                                <span class="text-slate-300 dark:text-slate-600">|</span>
+                                <a
+                                    href="https://dev.to/saadmk11"
+                                    target="_blank"
+                                    class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
+                                >
+                                    dev.to/saadmk11 <i class="fas fa-external-link-alt text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <a
+                                href="https://blog.readthedocs.com/building-docs-for-pull-requests/"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        GSoC 2019: Autobuild Documentation for Pull Requests
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        A deep dive into my Google Summer of Code project at Read the Docs, architecting
+                                        a CI system for documentation.
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                href="https://blog.maksudul.bd/posts/build-python-cli-tool-with-rust/"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        Build a Python CLI Tool with Rust
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        A simple example of how to build a Python CLI tool with Rust
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                href="https://blog.maksudul.bd/posts/django-postgresql-database-connection-pooling-with-pgbouncer/"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        Django Database Connection Pooling with PgBouncer
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        An example of Django PostgreSQL Database Connection Pooling with PgBouncer
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                href="https://dev.to/saadmk11/how-i-use-github-actions-to-keep-my-resume-up-to-date-using-scheduled-events-21j2"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        Automating Resume Updates with GitHub Actions
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        A tutorial on using GitHub Actions scheduled events to automatically keep my
+                                        resume up to date.
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                href="https://dev.to/saadmk11/github-actions-changelog-ci-4ojh"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        Changelog CI: Auto-generated Changelogs
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        Introducing my GitHub Action that automatically generates changelogs from your
+                                        commit messages.
+                                    </p>
+                                </div>
+                            </a>
+                            <a
+                                href="https://dev.to/saadmk11/github-actions-version-updater-similar-to-github-s-dependabot-but-for-github-actions-2g2i"
+                                target="_blank"
+                                class="group h-full"
+                            >
+                                <div
+                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
+                                >
+                                    <h3
+                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
+                                    >
+                                        GitHub Actions Version Updater, Similar to GitHub's Dependabot, but for GitHub
+                                        Actions
+                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
+                                    </h3>
+                                    <p class="text-sm text-slate-600 dark:text-slate-400">
+                                        Introducing my GitHub Action that automatically updates your GitHub Actions to
+                                        the latest versions.
+                                    </p>
+                                </div>
+                            </a>
+                        </div>
+                    </section>
+
+                    <!-- Footer -->
+                    <footer class="text-center text-slate-500 dark:text-slate-400 text-sm py-8">
+                        <p>
+                            &copy;
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script>
+                            Khandker Maksudul Haque. Built with Tailwind CSS.
+                        </p>
+                    </footer>
                 </div>
             </div>
         </div>
-        <hr>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+        <script src="main.js"></script>
     </body>
 </html>
