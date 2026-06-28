@@ -1,8 +1,5 @@
-// ---------------------------------------------------------------------------
-// Dark mode toggle
-// The `dark` class is set in <head> before paint (to avoid a flash); here we
-// only sync which icon is shown and persist the user's choice.
-// ---------------------------------------------------------------------------
+// Dark mode toggle. The `dark` class is applied in <head> before paint (to avoid
+// a flash), so here we only sync the icon and remember the choice.
 const themeToggleBtn = document.getElementById("theme-toggle");
 const darkIcon = document.getElementById("theme-toggle-dark-icon");
 const lightIcon = document.getElementById("theme-toggle-light-icon");
@@ -19,32 +16,7 @@ themeToggleBtn.addEventListener("click", () => {
     syncThemeIcon();
 });
 
-// ---------------------------------------------------------------------------
-// Scroll-reveal animations (progressive enhancement)
-// ---------------------------------------------------------------------------
-function initReveal() {
-    const elements = document.querySelectorAll(".reveal");
-    if (!("IntersectionObserver" in window)) {
-        elements.forEach((element) => element.classList.add("is-visible"));
-        return;
-    }
-    const observer = new IntersectionObserver(
-        (entries, obs) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("is-visible");
-                    obs.unobserve(entry.target);
-                }
-            });
-        },
-        { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
-    );
-    elements.forEach((element) => observer.observe(element));
-}
-
-// ---------------------------------------------------------------------------
-// Navbar scroll-spy — highlights the link for the section currently in view
-// ---------------------------------------------------------------------------
+// Highlight the nav link for the section currently in view.
 function initScrollSpy() {
     const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
     if (!navLinks.length || !("IntersectionObserver" in window)) return;
@@ -68,11 +40,7 @@ function initScrollSpy() {
     sections.forEach((section) => observer.observe(section));
 }
 
-// ---------------------------------------------------------------------------
-// Init
-// ---------------------------------------------------------------------------
 syncThemeIcon();
 document.addEventListener("DOMContentLoaded", () => {
-    initReveal();
     initScrollSpy();
 });

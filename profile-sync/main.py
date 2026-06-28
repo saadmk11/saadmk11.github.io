@@ -1,43 +1,37 @@
-"""Refresh the "Featured Projects" cards in ``index.html`` with live GitHub stats.
-
-Run it from this directory with uv::
-
-    uv run main.py
-
-For every repository in :data:`config.FEATURED_PROJECTS` it fetches the current
-star, fork and watcher counts (plus the primary language) and rewrites the cards
-between the ``projects:start`` / ``projects:end`` markers in ``index.html``.
-
-Set the ``GITHUB_TOKEN`` environment variable to raise the GitHub API rate limit;
-GitHub Actions provides one automatically.
-"""
-
+import asyncio
 import os
 import sys
 
 from config import FEATURED_PROJECTS, INDEX_HTML
 from exceptions import ProfileSyncError
-from github import fetch_repository_stats
+from github import build_client, fetch_repository_stats
 from models import ProjectCard
 from rendering import inject_cards, render_cards
 
 
-def collect_cards() -> list[ProjectCard]:
-    """Fetch live stats for every featured project and pair them together."""
+async def collect_cards() -> list[ProjectCard]:
+    """Fetch every project's stats in parallel, keeping the configured order."""
     token = os.environ.get("GITHUB_TOKEN")
+    async with build_client(token) as client:
+        try:
+            async with asyncio.TaskGroup() as group:
+                tasks = [
+                    group.create_task(fetch_repository_stats(client, project.full_name))
+                    for project in FEATURED_PROJECTS
+                ]
+        except* ProfileSyncError as group_error:
+            raise group_error.exceptions[0] from None
+
     return [
-        ProjectCard(project=project, stats=fetch_repository_stats(project.full_name, token))
-        for project in FEATURED_PROJECTS
+        ProjectCard(project=project, stats=task.result())
+        for project, task in zip(FEATURED_PROJECTS, tasks, strict=True)
     ]
 
 
-def update_index_html() -> bool:
-    """Refresh ``index.html`` in place. Returns ``True`` if the file changed.
-
-    Raises:
-        ProfileSyncError: On any GitHub, rendering or filesystem failure.
-    """
-    cards_html = render_cards(collect_cards())
+async def update_index_html() -> bool:
+    """Rewrite the cards in index.html; return True if the file changed."""
+    cards = await collect_cards()
+    cards_html = await render_cards(cards)
 
     try:
         page = INDEX_HTML.read_text(encoding="utf-8")
@@ -55,10 +49,10 @@ def update_index_html() -> bool:
     return True
 
 
-def main() -> int:
-    """CLI entry point. Returns a process exit code (``0`` ok, ``1`` on error)."""
+async def run() -> int:
+    """Run the update and return a process exit status."""
     try:
-        changed = update_index_html()
+        changed = await update_index_html()
     except ProfileSyncError as error:
         print(f"error: {error}", file=sys.stderr)
         return 1
@@ -68,6 +62,11 @@ def main() -> int:
     else:
         print("index.html is already up to date.")
     return 0
+
+
+def main() -> int:
+    """Run the program and return its exit code."""
+    return asyncio.run(run())
 
 
 if __name__ == "__main__":

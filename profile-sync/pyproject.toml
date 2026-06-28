@@ -5,6 +5,7 @@ description = "Refresh the Featured Projects section of the profile site (index.
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
+    "httpx>=0.28",
     "jinja2>=3.1",
 ]
 

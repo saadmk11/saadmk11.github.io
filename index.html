@@ -46,11 +46,10 @@
         <meta name="twitter:image" content="https://profile.maksudul.bd/assets/og-image.png" />
         <meta name="twitter:creator" content="@saad_mk11" />
 
-        <!-- Set theme + enable JS-only styles before paint (prevents flash of wrong theme) -->
+        <!-- Apply the saved theme before paint (prevents a flash of the wrong theme) -->
         <script>
             (function () {
                 try {
-                    document.documentElement.classList.add("js");
                     var t = localStorage.getItem("color-theme");
                     if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
                         document.documentElement.classList.add("dark");
@@ -237,19 +236,6 @@
                 border-color: #be123c;
                 color: #fda4af;
             }
-
-            /* Scroll-reveal — only when JS is on and motion is allowed */
-            @media (prefers-reduced-motion: no-preference) {
-                .js .reveal {
-                    opacity: 0;
-                    transform: translateY(12px);
-                    transition: opacity 0.5s ease, transform 0.5s ease;
-                }
-                .js .reveal.is-visible {
-                    opacity: 1;
-                    transform: none;
-                }
-            }
         </style>
 
         <!-- Structured data for search / rich results -->
@@ -344,7 +330,7 @@
             <div class="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-indigo-400/20 dark:bg-indigo-600/10 blur-3xl"></div>
         </div>
 
-        <!-- Navbar (floating frosted glass, Raycast-style) -->
+        <!-- Navbar -->
         <header class="sticky top-0 z-50 mx-auto max-w-6xl px-4 pt-3 sm:px-6 sm:pt-4">
             <nav class="flex h-12 items-center justify-between gap-3 rounded-2xl border border-slate-200/80 bg-white/60 px-3 shadow-lg shadow-slate-900/5 backdrop-blur-xl backdrop-saturate-150 dark:border-white/10 dark:bg-slate-900/55 dark:shadow-black/30 sm:px-4">
                 <a href="#top" class="text-sm font-bold tracking-tight text-slate-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400" aria-label="Home">Khandker M. Haque</a>
@@ -384,11 +370,11 @@
         </header>
 
         <main id="top" class="mx-auto grid max-w-6xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-6">
-            <!-- ===================== SIDEBAR (at a glance) ===================== -->
+            <!-- Sidebar -->
             <aside class="lg:col-span-4">
                 <div class="space-y-4 lg:sticky lg:top-[4.75rem]">
                     <!-- Profile -->
-                    <div class="reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                         <div class="flex flex-col items-center text-center">
                             <div class="rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-sky-400 p-1 shadow-md">
                                 <img
@@ -457,10 +443,10 @@
                         </div>
                     </div>
 
-                    <!-- Tech Stack (eye-catching) -->
-                    <div id="skills" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/60 p-5 shadow-sm dark:border-slate-800 dark:from-slate-900 dark:to-slate-900">
+                    <!-- Tech Stack -->
+                    <div id="skills" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/60 p-5 shadow-sm dark:border-slate-800 dark:from-slate-900 dark:to-slate-900">
                         <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
-                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-blue-500 to-indigo-500 text-white shadow-sm"><i class="fas fa-layer-group text-xs"></i></span>
+                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300"><i class="fas fa-layer-group text-xs"></i></span>
                             Tech Stack
                         </h2>
                         <div class="space-y-3">
@@ -504,7 +490,7 @@
                     </div>
 
                     <!-- Education (sidebar — desktop only; on mobile it renders last, after Writing) -->
-                    <div id="education" class="reveal hidden scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:block">
+                    <div id="education" class="hidden scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:block">
                         <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                             <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"><i class="fas fa-graduation-cap text-xs"></i></span>
                             Education
@@ -517,10 +503,10 @@
                 </div>
             </aside>
 
-            <!-- ===================== MAIN ===================== -->
+            <!-- Main -->
             <div class="space-y-4 lg:col-span-8">
                 <!-- About -->
-                <section id="about" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <section id="about" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300"><i class="fas fa-user text-xs"></i></span>
                         About
@@ -539,7 +525,7 @@
                 </section>
 
                 <!-- Experience -->
-                <section id="experience" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <section id="experience" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300"><i class="fas fa-briefcase text-xs"></i></span>
                         Work Experience
@@ -612,7 +598,7 @@
                 </section>
 
                 <!-- Open Source -->
-                <section id="opensource" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <section id="opensource" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300"><i class="fas fa-code-branch text-xs"></i></span>
                         Open Source Contributions
@@ -676,7 +662,7 @@
                             </div>
                         </div>
 
-                        <!-- Ruff (full-width on the last line; showcases the rule plugins) -->
+                        <!-- Ruff -->
                         <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
                             <div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">
                                 <h3 class="text-[15px] font-bold text-slate-900 dark:text-white"><a href="https://github.com/astral-sh/ruff" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">Ruff (Python linter) <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a></h3>
@@ -688,7 +674,7 @@
                 </section>
 
                 <!-- Projects -->
-                <section id="projects" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <section id="projects" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300"><i class="fas fa-laptop-code text-xs"></i></span>
                         Featured Projects
@@ -796,7 +782,7 @@
                 </section>
 
                 <!-- Writing -->
-                <section id="writing" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                <section id="writing" class="scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
                     <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
                         <h2 class="flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                             <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-300"><i class="fas fa-rss text-xs"></i></span>
@@ -837,7 +823,7 @@
                 </section>
 
                 <!-- Education (mobile only — on desktop it lives in the sidebar) -->
-                <div class="reveal scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:hidden">
+                <div class="scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:hidden">
                     <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
                         <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"><i class="fas fa-graduation-cap text-xs"></i></span>
                         Education
