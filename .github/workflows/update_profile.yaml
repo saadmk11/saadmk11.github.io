@@ -1,40 +1,37 @@
-name: Update My Resume
+name: Update Featured Projects
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - master
   schedule:
-    - cron:  '0 */6 * * *'
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+
+permissions:
+  contents: write
 
 jobs:
-
-  build:
+  update:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Setup Python Environment
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.7
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
 
-      - name: Install Requirements
-        run: pip install -r requirements.txt
+      - name: Refresh project cards in index.html
+        working-directory: profile-sync
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run main.py
 
-      - name: Execute Python script
+      - name: Commit and push if changed
         run: |
-          python scripts/update.py
-
-      - name: setup git config
-        run: |
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
-      - name: commit changes
-        run: |
-          chmod +x ./scripts/commit.sh
-          ./scripts/commit.sh
+          if git diff --quiet index.html; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "chore: refresh featured project stats"
+          git push

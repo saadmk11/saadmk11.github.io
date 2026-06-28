@@ -1,0 +1,26 @@
+[project]
+name = "profile-sync"
+version = "0.1.0"
+description = "Refresh the Featured Projects section of the profile site (index.html) with live GitHub stats."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "jinja2>=3.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.14",
+    "ruff>=0.9",
+]
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+
+[tool.ruff]
+target-version = "py314"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]

@@ -1,0 +1,12 @@
+<div class="group flex h-full flex-col rounded-xl border border-slate-200 bg-slate-50 p-3.5 transition-all hover:border-blue-300 hover:shadow-md dark:border-slate-700 dark:bg-slate-800/40 dark:hover:border-blue-800">
+    <div class="mb-1.5 flex items-center justify-between gap-2">
+        <h3 class="min-w-0 text-sm font-bold text-slate-900 dark:text-white"><a href="{{ card.project.url }}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400"><i class="fas fa-book text-xs text-blue-500"></i><span class="truncate">{{ card.project.name }}</span></a></h3>
+        <span class="shrink-0 rounded-full px-2 py-0.5 text-[10px] font-medium {{ card.stats.language | language_badge }}">{{ card.stats.language }}</span>
+    </div>
+    <p class="mb-2.5 line-clamp-2 text-[13px] leading-snug text-slate-600 dark:text-slate-300">{{ card.project.description }}</p>
+    <div class="mt-auto flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+        <span class="flex items-center gap-1"><i class="fas fa-star text-yellow-400"></i> {{ card.stats.stars }}</span>
+        <span class="flex items-center gap-1"><i class="fas fa-code-branch text-green-500"></i> {{ card.stats.forks }}</span>
+        <span class="flex items-center gap-1"><i class="far fa-eye text-blue-400"></i> {{ card.stats.watchers }}</span>
+    </div>
+</div>

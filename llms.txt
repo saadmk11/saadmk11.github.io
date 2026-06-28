@@ -1,0 +1,90 @@
+# Khandker Maksudul Haque
+
+> Software Engineer specializing in backend development and infrastructure with Python, Django, and AWS. Maintainer of Django Packages, open-source contributor (Read the Docs, Ruff), and Google Summer of Code 2019 alum. Based in Dhaka, Bangladesh; works remotely.
+
+- Name: Khandker Maksudul Haque (GitHub handle: saadmk11)
+- Role: Software Engineer — Backend & Infrastructure
+- Current employer: Neliti (Singapore, remote), August 2021 – present
+- Location: Dhaka, Bangladesh (open to remote opportunities)
+- Email: saad.mk112@gmail.com
+- Website: https://profile.maksudul.bd
+- Résumé (PDF): https://profile.maksudul.bd/khandker-resume.pdf
+
+## About
+
+Khandker Maksudul Haque is a software engineer focused on backend development and infrastructure using Python, Django, and AWS. At Neliti he works on backend services, CI/CD automation, and production deployments. He is one of the maintainers of Django Packages and contributes to open-source projects such as Read the Docs and Ruff, helping improve tools used by developers worldwide.
+
+## Skills
+
+- Languages: Python, JavaScript, Rust
+- Backend & APIs: Django, Django REST Framework, FastAPI, Celery, Django-Q
+- Data & Messaging: PostgreSQL, Redis, Memcached, RabbitMQ, Elasticsearch
+- Cloud & DevOps: AWS (ECS, Lambda), Docker, GitHub Actions, CI/CD
+- Tooling & Testing: Git, uv, mypy, pytest
+- Payments & Integrations: Stripe, Square, Razorpay, Paytm, OAuth2, Crossref, Matomo
+
+## Experience
+
+### Software Engineer — Neliti Pty Ltd (Singapore, Remote) · Aug 2021 – Present
+Neliti is Indonesia's largest research repository.
+- Migrated infrastructure to AWS ECS, reducing costs by 25%.
+- Automated deployments with GitHub Actions, enabling zero-downtime releases.
+- Implemented PDF compression via AWS Lambda, reducing server load by 15% and cost by 5%.
+- Built a custom domain service allowing customers to serve content from their own domains automatically.
+- Revamped dependency management using pip-tools and GitHub Actions, removing 90% of manual work.
+- Developed API v2 with role-based permissions using Django REST Framework.
+- Integrated and automated DOI (Digital Object Identifier) registration using Crossref.
+- Implemented an Elasticsearch-based search engine for searching articles.
+- Fixed memory leaks and thread-safety issues, pushing a patch to an upstream open-source package.
+- Integrated Stripe global payouts for international affiliate payments.
+
+### Software Developer — The SmartLabs (India, Remote) · Jan 2018 – Jul 2021
+- Built diagnostic test booking and online payment systems using PayTM and RazorPay.
+- Developed e-commerce platforms for pet products with online payment and customer notifications.
+- Integrated shipment providers for product tracking, eliminating 95% of manual work.
+- Implemented REST APIs with Django REST Framework for mobile applications.
+- Migrated legacy codebases from Python 2.7 to 3.6.
+
+### Google Summer of Code Developer — Read the Docs (United States, Remote) · May 2019 – Aug 2019
+- Architected a CI system for documentation builds on Pull Requests.
+- Developed features to build documentation on PR creation and send status notifications to GitHub/GitLab APIs.
+- Project blog post: https://blog.readthedocs.com/building-docs-for-pull-requests/
+
+## Open Source Contributions
+
+- Django Packages (Maintainer) — https://github.com/djangopackages/djangopackages — Migrated legacy templates to Tailwind CSS; eliminated N+1 queries and added caching, cutting database load by 4M+ queries/month; upgraded to Python 3.11 and Django 5; replaced cron jobs with Django-Q; migrated to psycopg3 with native pooling; implemented PostgreSQL Full-Text Search.
+- Read the Docs (Contributor) — https://github.com/readthedocs/readthedocs.org — Database normalization affecting millions of rows; improved Elasticsearch index/search performance by 15%; unified Django settings; developed API v3 endpoints and filters.
+- Ruff (Contributor) — https://github.com/astral-sh/ruff — Implemented linter rules for plugins including flake8-bandit, isort, flake8-self, and pygrep-hooks.
+- django-elasticsearch-dsl (Contributor) — https://github.com/django-es/django-elasticsearch-dsl — Migrated test suite from TravisCI to GitHub Actions; implemented Django signals.
+- djangoproject.com (Contributor) — https://www.djangoproject.com — Improved page performance by optimizing database queries.
+
+## Projects (authored)
+
+- Changelog CI — https://github.com/saadmk11/changelog-ci — GitHub Action that automatically generates changelogs from merged pull requests or commit messages.
+- GitHub Actions Version Updater — https://github.com/saadmk11/github-actions-version-updater — GitHub Action that updates all GitHub Actions in a repository and opens a Pull Request.
+- django-newsfeed — https://github.com/saadmk11/django-newsfeed — Django package to create a news curator and newsletter subscription application.
+- redis-search-django — https://github.com/saadmk11/redis-search-django — Django package providing auto indexing and search for Django models using RediSearch.
+- drf-test-generator — https://github.com/saadmk11/drf-test-generator — Generates unittest and pytest style tests for Django REST Framework ViewSets.
+- python-third-party-imports — https://github.com/saadmk11/python-third-party-imports — Python CLI tool (written in Rust) that finds all third-party packages imported in a Python project.
+
+## Education
+
+- Bachelor of Computer Science and Engineering — International University of Business Agriculture & Technology (Bangladesh), May 2018 – Apr 2022. CGPA: 3.70 / 4.00.
+
+## Writing
+
+- Blog: https://blog.maksudul.bd
+- Dev.to: https://dev.to/saadmk11
+- GSoC 2019: Autobuild Documentation for Pull Requests — https://blog.readthedocs.com/building-docs-for-pull-requests/
+- Build a Python CLI Tool with Rust — https://blog.maksudul.bd/posts/build-python-cli-tool-with-rust/
+- Django Database Connection Pooling with PgBouncer — https://blog.maksudul.bd/posts/django-postgresql-database-connection-pooling-with-pgbouncer/
+- Sorting Strategies for Optional Fields in Django — https://blog.maksudul.bd/sorting-strategies-for-optional-fields-in-django/
+
+## Links
+
+- GitHub: https://github.com/saadmk11
+- LinkedIn: https://www.linkedin.com/in/saadmk11/
+- X (Twitter): https://x.com/saad_mk11
+- Mastodon: https://fosstodon.org/@saadmk11
+- Dev.to: https://dev.to/saadmk11
+- Blog: https://blog.maksudul.bd
