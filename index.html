@@ -5,11 +5,62 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
             name="description"
-            content="Portfolio of Khandker Maksudul Haque - Software Engineer, Python/Django Developer, and Open Source Contributor."
+            content="Khandker Maksudul Haque — Software Engineer specializing in Python, Django & AWS. Backend & infrastructure engineer, open-source maintainer (Django Packages), and Google Summer of Code 2019 alum."
         />
         <meta name="author" content="Khandker Maksudul Haque" />
-        <title>Khandker Maksudul Haque | Software Engineer</title>
+        <meta name="keywords" content="Khandker Maksudul Haque, saadmk11, Software Engineer, Python Developer, Django Developer, Backend Engineer, AWS, Open Source, Django Packages, Read the Docs" />
+        <meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)" />
+        <meta name="theme-color" content="#020617" media="(prefers-color-scheme: dark)" />
+        <title>Khandker Maksudul Haque — Software Engineer (Python · Django · AWS)</title>
+
+        <link rel="canonical" href="https://profile.maksudul.bd/" />
         <link rel="icon" type="image/png" href="assets/image.png" />
+        <link rel="apple-touch-icon" href="assets/image.png" />
+
+        <!-- Open Graph / Social sharing -->
+        <meta property="og:type" content="profile" />
+        <meta property="og:title" content="Khandker Maksudul Haque — Software Engineer" />
+        <meta
+            property="og:description"
+            content="Backend & infrastructure engineer (Python · Django · AWS), open-source maintainer, and GSoC 2019 alum."
+        />
+        <meta property="og:url" content="https://profile.maksudul.bd/" />
+        <meta property="og:image" content="https://avatars1.githubusercontent.com/u/24854406" />
+        <meta property="og:site_name" content="Khandker Maksudul Haque" />
+        <meta property="profile:first_name" content="Khandker Maksudul" />
+        <meta property="profile:last_name" content="Haque" />
+        <meta property="profile:username" content="saadmk11" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Khandker Maksudul Haque — Software Engineer" />
+        <meta
+            name="twitter:description"
+            content="Backend & infrastructure engineer (Python · Django · AWS), open-source maintainer, and GSoC 2019 alum."
+        />
+        <meta name="twitter:image" content="https://avatars1.githubusercontent.com/u/24854406" />
+        <meta name="twitter:creator" content="@saad_mk11" />
+
+        <!-- Set theme + enable JS-only styles before paint (prevents flash of wrong theme) -->
+        <script>
+            (function () {
+                try {
+                    document.documentElement.classList.add("js");
+                    var t = localStorage.getItem("color-theme");
+                    if (t === "dark" || (!t && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                        document.documentElement.classList.add("dark");
+                    }
+                } catch (e) {}
+            })();
+        </script>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- Tailwind CSS -->
         <script src="https://cdn.tailwindcss.com"></script>
@@ -18,8 +69,22 @@
                 darkMode: "class",
                 theme: {
                     extend: {
+                        fontFamily: {
+                            sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
+                        },
                         colors: {
-                            primary: "#3b82f6",
+                            primary: {
+                                50: "#eff6ff",
+                                100: "#dbeafe",
+                                200: "#bfdbfe",
+                                300: "#93c5fd",
+                                400: "#60a5fa",
+                                500: "#3b82f6",
+                                600: "#2563eb",
+                                700: "#1d4ed8",
+                                800: "#1e40af",
+                                900: "#1e3a8a",
+                            },
                         },
                     },
                 },
@@ -31,731 +96,617 @@
 
         <!-- Custom Styles -->
         <style>
-            /* Custom scrollbar for webkit */
+            html {
+                font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            }
+
+            /* Custom scrollbar */
             ::-webkit-scrollbar {
-                width: 8px;
+                width: 10px;
+                height: 10px;
             }
             ::-webkit-scrollbar-track {
-                background: #f1f1f1;
-            }
-            .dark ::-webkit-scrollbar-track {
-                background: #1e293b;
+                background: transparent;
             }
             ::-webkit-scrollbar-thumb {
-                background: #888;
-                border-radius: 4px;
+                background: #cbd5e1;
+                border-radius: 9999px;
+                border: 2px solid transparent;
+                background-clip: padding-box;
             }
             ::-webkit-scrollbar-thumb:hover {
-                background: #555;
+                background: #94a3b8;
+            }
+            .dark ::-webkit-scrollbar-thumb {
+                background: #475569;
+                border: 2px solid transparent;
+                background-clip: padding-box;
+            }
+            .dark ::-webkit-scrollbar-thumb:hover {
+                background: #64748b;
+            }
+
+            /* Gradient text accent */
+            .gradient-text {
+                background-image: linear-gradient(120deg, #2563eb 0%, #6366f1 45%, #0ea5e9 100%);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            /* Active nav link */
+            .nav-link.is-active {
+                color: #2563eb;
+            }
+            .dark .nav-link.is-active {
+                color: #60a5fa;
+            }
+
+            /* Inline code chips */
+            code {
+                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size: 0.82em;
+                background: rgba(15, 23, 42, 0.07);
+                padding: 0.1em 0.4em;
+                border-radius: 0.3rem;
+                white-space: nowrap;
+            }
+            .dark code {
+                background: rgba(148, 163, 184, 0.18);
+                color: #e2e8f0;
+            }
+
+            /* Category-tinted tech pills */
+            .tech-pill {
+                display: inline-flex;
+                align-items: center;
+                border-radius: 0.45rem;
+                border: 1px solid transparent;
+                padding: 0.25rem 0.6rem;
+                font-size: 0.75rem;
+                line-height: 1rem;
+                font-weight: 500;
+                transition: transform 0.15s ease, box-shadow 0.15s ease;
+            }
+            .tech-pill:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 2px 8px rgb(15 23 42 / 0.08);
+            }
+            .tp-blue {
+                background: #eff6ff;
+                border-color: #bfdbfe;
+                color: #1d4ed8;
+            }
+            .tp-violet {
+                background: #f5f3ff;
+                border-color: #ddd6fe;
+                color: #6d28d9;
+            }
+            .tp-emerald {
+                background: #ecfdf5;
+                border-color: #a7f3d0;
+                color: #047857;
+            }
+            .tp-sky {
+                background: #f0f9ff;
+                border-color: #bae6fd;
+                color: #0369a1;
+            }
+            .tp-amber {
+                background: #fffbeb;
+                border-color: #fde68a;
+                color: #b45309;
+            }
+            .tp-rose {
+                background: #fff1f2;
+                border-color: #fecdd3;
+                color: #be123c;
+            }
+            .dark .tp-blue {
+                background: rgba(30, 58, 138, 0.25);
+                border-color: #1e40af;
+                color: #93c5fd;
+            }
+            .dark .tp-violet {
+                background: rgba(76, 29, 149, 0.25);
+                border-color: #6d28d9;
+                color: #c4b5fd;
+            }
+            .dark .tp-emerald {
+                background: rgba(6, 78, 59, 0.25);
+                border-color: #047857;
+                color: #6ee7b7;
+            }
+            .dark .tp-sky {
+                background: rgba(12, 74, 110, 0.25);
+                border-color: #0369a1;
+                color: #7dd3fc;
+            }
+            .dark .tp-amber {
+                background: rgba(120, 53, 15, 0.25);
+                border-color: #b45309;
+                color: #fcd34d;
+            }
+            .dark .tp-rose {
+                background: rgba(136, 19, 55, 0.25);
+                border-color: #be123c;
+                color: #fda4af;
+            }
+
+            /* Scroll-reveal — only when JS is on and motion is allowed */
+            @media (prefers-reduced-motion: no-preference) {
+                .js .reveal {
+                    opacity: 0;
+                    transform: translateY(12px);
+                    transition: opacity 0.5s ease, transform 0.5s ease;
+                }
+                .js .reveal.is-visible {
+                    opacity: 1;
+                    transform: none;
+                }
             }
         </style>
-    </head>
-    <body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
-        <!-- Dark Mode Toggle -->
-        <button
-            id="theme-toggle"
-            type="button"
-            class="fixed top-4 right-4 z-50 text-gray-500 dark:text-gray-400 bg-white dark:bg-slate-800 shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 border border-gray-200 dark:border-gray-700"
-        >
-            <svg
-                id="theme-toggle-dark-icon"
-                class="hidden w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
-            <svg
-                id="theme-toggle-light-icon"
-                class="hidden w-5 h-5"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z"
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                ></path>
-            </svg>
-        </button>
 
-        <div class="container mx-auto px-4 py-8 max-w-7xl">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <!-- Sidebar / Profile Section -->
-                <div class="lg:col-span-3">
-                    <div class="lg:sticky lg:top-8 space-y-6">
-                        <div
-                            class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-6 text-center border border-slate-200 dark:border-slate-700"
-                        >
-                            <div class="relative w-32 h-32 mx-auto mb-4">
+        <!-- Structured data for search / rich results -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Khandker Maksudul Haque",
+                "alternateName": "saadmk11",
+                "jobTitle": "Software Engineer",
+                "url": "https://profile.maksudul.bd/",
+                "image": "https://avatars1.githubusercontent.com/u/24854406",
+                "email": "mailto:saad.mk112@gmail.com",
+                "address": { "@type": "PostalAddress", "addressLocality": "Dhaka", "addressCountry": "Bangladesh" },
+                "worksFor": { "@type": "Organization", "name": "Neliti", "url": "https://www.neliti.com/" },
+                "alumniOf": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "International University of Business Agriculture & Technology"
+                },
+                "knowsAbout": ["Python", "Django", "AWS", "PostgreSQL", "Elasticsearch", "Redis", "Open Source"],
+                "sameAs": [
+                    "https://github.com/saadmk11",
+                    "https://www.linkedin.com/in/saadmk11/",
+                    "https://x.com/saad_mk11",
+                    "https://fosstodon.org/@saadmk11",
+                    "https://dev.to/saadmk11",
+                    "https://blog.maksudul.bd"
+                ]
+            }
+        </script>
+    </head>
+    <body
+        class="overflow-x-hidden bg-slate-50 dark:bg-slate-950 text-slate-700 dark:text-slate-300 antialiased selection:bg-blue-500/20 selection:text-blue-700 dark:selection:text-blue-200 transition-colors duration-300"
+    >
+        <!-- Skip link (a11y) -->
+        <a
+            href="#about"
+            class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-lg focus:bg-blue-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+            >Skip to content</a
+        >
+
+        <!-- Decorative background -->
+        <div aria-hidden="true" class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+            <div class="absolute -top-32 -left-24 h-80 w-80 rounded-full bg-blue-400/20 dark:bg-blue-600/10 blur-3xl"></div>
+            <div class="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-indigo-400/20 dark:bg-indigo-600/10 blur-3xl"></div>
+        </div>
+
+        <!-- Navbar (floating frosted glass, Raycast-style) -->
+        <header class="sticky top-0 z-50 mx-auto max-w-6xl px-4 pt-3 sm:px-6 sm:pt-4">
+            <nav class="flex h-12 items-center justify-between gap-3 rounded-2xl border border-slate-200/70 bg-white/70 px-3 shadow-lg shadow-slate-900/5 backdrop-blur-xl dark:border-white/10 dark:bg-slate-900/60 dark:shadow-black/30 sm:px-4">
+                <a href="#top" class="text-sm font-bold tracking-tight text-slate-900 transition-colors hover:text-blue-600 dark:text-white dark:hover:text-blue-400" aria-label="Home">Khandker M. Haque</a>
+
+                <div class="hidden items-center gap-0.5 lg:flex">
+                    <a href="#about" data-nav class="nav-link rounded-md px-2.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">About</a>
+                    <a href="#experience" data-nav class="nav-link rounded-md px-2.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">Experience</a>
+                    <a href="#opensource" data-nav class="nav-link rounded-md px-2.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">Open Source</a>
+                    <a href="#projects" data-nav class="nav-link rounded-md px-2.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">Projects</a>
+                    <a href="#writing" data-nav class="nav-link rounded-md px-2.5 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">Writing</a>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <a
+                        href="khandker-resume.pdf"
+                        download="khandker-resume.pdf"
+                        class="hidden items-center gap-1.5 rounded-lg bg-blue-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 sm:inline-flex"
+                    >
+                        <i class="fas fa-download text-xs"></i> Résumé
+                    </a>
+                    <button
+                        id="theme-toggle"
+                        type="button"
+                        aria-label="Toggle dark mode"
+                        class="rounded-lg border border-slate-200 bg-white p-2 text-slate-500 shadow-sm transition-colors hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-slate-700 dark:focus:ring-slate-700"
+                    >
+                        <svg id="theme-toggle-dark-icon" class="hidden h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                        <svg id="theme-toggle-light-icon" class="hidden h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main id="top" class="mx-auto grid max-w-6xl gap-5 px-4 py-6 sm:px-6 lg:grid-cols-12 lg:gap-6">
+            <!-- ===================== SIDEBAR (at a glance) ===================== -->
+            <aside class="lg:col-span-4">
+                <div class="space-y-4 lg:sticky lg:top-[4.75rem]">
+                    <!-- Profile -->
+                    <div class="reveal rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-sky-400 p-1 shadow-md">
                                 <img
                                     src="https://avatars1.githubusercontent.com/u/24854406"
-                                    class="rounded-full object-cover w-full h-full border-4 border-blue-500 shadow-md"
+                                    class="h-24 w-24 rounded-full border-2 border-white object-cover dark:border-slate-900"
                                     alt="Khandker Maksudul Haque"
+                                    width="96"
+                                    height="96"
                                 />
                             </div>
-                            <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                            <span class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-green-200 bg-green-50 px-2.5 py-0.5 text-[11px] font-semibold text-green-700 dark:border-green-900 dark:bg-green-900/30 dark:text-green-300">
+                                <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span> Open to opportunities
+                            </span>
+                            <h1 class="mt-2 text-xl font-extrabold leading-tight text-slate-900 dark:text-white">
                                 Khandker Maksudul Haque
                             </h1>
-                            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
-                                Software Engineer & Open Source Maintainer
-                            </p>
+                            <p class="mt-1 text-[15px] font-bold"><span class="gradient-text">Software Engineer</span></p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Backend &amp; Infrastructure</p>
 
-                            <div class="flex flex-wrap justify-center gap-2 mb-6">
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                                    >Python</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-200"
-                                    >Django</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
-                                    >AWS</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-purple-100 text-purple-800 rounded-full dark:bg-purple-900 dark:text-purple-200"
-                                    >FastAPI</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-indigo-100 text-indigo-800 rounded-full dark:bg-indigo-900 dark:text-indigo-200"
-                                    >Docker</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-teal-100 text-teal-800 rounded-full dark:bg-teal-900 dark:text-teal-200"
-                                    >Celery</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-red-100 text-red-800 rounded-full dark:bg-red-900 dark:text-red-200"
-                                    >Redis</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-cyan-100 text-cyan-800 rounded-full dark:bg-cyan-900 dark:text-cyan-200"
-                                    >PostgreSQL</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-gray-100 text-gray-800 rounded-full dark:bg-gray-700 dark:text-gray-200"
-                                    >Git</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-pink-100 text-pink-800 rounded-full dark:bg-pink-900 dark:text-pink-200"
-                                    >Elasticsearch</span
-                                >
-                                <span
-                                    class="px-2.5 py-1 text-xs font-semibold bg-yellow-100 text-yellow-800 rounded-full dark:bg-yellow-900 dark:text-yellow-200"
-                                    >JavaScript</span
-                                >
+                            <div class="mt-3 flex items-center justify-center gap-4">
+                                <a href="https://github.com/saadmk11" target="_blank" rel="noopener noreferrer" class="text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" aria-label="GitHub"><i class="fa-brands fa-github text-lg"></i></a>
+                                <a href="https://www.linkedin.com/in/saadmk11/" target="_blank" rel="noopener noreferrer" class="text-slate-500 transition-colors hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400" aria-label="LinkedIn"><i class="fa-brands fa-linkedin text-lg"></i></a>
+                                <a href="https://x.com/saad_mk11" target="_blank" rel="noopener noreferrer" class="text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter text-lg"></i></a>
+                                <a href="https://fosstodon.org/@saadmk11" target="_blank" rel="noopener noreferrer" class="text-slate-500 transition-colors hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400" aria-label="Mastodon"><i class="fa-brands fa-mastodon text-lg"></i></a>
+                                <a href="https://dev.to/saadmk11" target="_blank" rel="noopener noreferrer" class="text-slate-500 transition-colors hover:text-slate-900 dark:text-slate-400 dark:hover:text-white" aria-label="Dev.to"><i class="fa-brands fa-dev text-lg"></i></a>
                             </div>
+                        </div>
 
-                            <div class="flex justify-center space-x-4 mb-6">
-                                <a
-                                    href="https://github.com/saadmk11"
-                                    target="_blank"
-                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
-                                    aria-label="GitHub"
-                                >
-                                    <i class="fa-brands fa-github text-2xl"></i>
-                                </a>
-                                <a
-                                    href="https://www.linkedin.com/in/saadmk11/"
-                                    target="_blank"
-                                    class="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-colors"
-                                    aria-label="LinkedIn"
-                                >
-                                    <i class="fa-brands fa-linkedin text-2xl"></i>
-                                </a>
-                                <a
-                                    href="https://x.com/saad_mk11"
-                                    target="_blank"
-                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
-                                    aria-label="X"
-                                >
-                                    <i class="fa-brands fa-x-twitter text-2xl"></i>
-                                </a>
-                                <a
-                                    href="https://fosstodon.org/@saadmk11"
-                                    target="_blank"
-                                    class="text-slate-600 hover:text-purple-600 dark:text-slate-400 dark:hover:text-purple-400 transition-colors"
-                                    aria-label="Mastodon"
-                                >
-                                    <i class="fa-brands fa-mastodon text-2xl"></i>
-                                </a>
-                                <a
-                                    href="https://dev.to/saadmk11"
-                                    target="_blank"
-                                    class="text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white transition-colors"
-                                    aria-label="Dev.to"
-                                >
-                                    <i class="fa-brands fa-dev text-2xl"></i>
-                                </a>
-                            </div>
-
-                            <!-- Resume / CV Button -->
-                            <a
-                                href="khandker-resume.pdf"
-                                download="khandker-resume.pdf"
-                                class="flex items-center justify-center gap-2 w-full mb-6 px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-lg shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800"
-                                aria-label="Download résumé (PDF)"
-                            >
-                                <i class="fas fa-download"></i>
-                                Download Résumé
+                        <!-- CTAs -->
+                        <div class="mt-4 grid grid-cols-2 gap-2">
+                            <a href="khandker-resume.pdf" download="khandker-resume.pdf" class="inline-flex items-center justify-center gap-1.5 rounded-lg bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800">
+                                <i class="fas fa-download text-xs"></i> Résumé
                             </a>
+                            <a href="mailto:saad.mk112@gmail.com" class="inline-flex items-center justify-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 transition-all hover:border-blue-300 hover:text-blue-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-blue-700 dark:hover:text-blue-400">
+                                <i class="fas fa-envelope text-xs"></i> Email
+                            </a>
+                        </div>
 
-                            <div
-                                class="space-y-3 text-left text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200 dark:border-slate-700 pt-4"
-                            >
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-envelope w-5 text-center text-blue-500"></i>
-                                    <a href="mailto:saad.mk112@gmail.com" class="hover:underline"
-                                        >saad.mk112@gmail.com</a
-                                    >
+                        <!-- Contact -->
+                        <div class="mt-4 space-y-2 border-t border-slate-200 pt-3 text-sm dark:border-slate-800">
+                            <a href="mailto:saad.mk112@gmail.com" class="flex items-center gap-2.5 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">
+                                <i class="fas fa-envelope w-4 text-center text-blue-500"></i> saad.mk112@gmail.com
+                            </a>
+                            <div class="flex items-center gap-2.5 text-slate-600 dark:text-slate-300">
+                                <i class="fas fa-map-marker-alt w-4 text-center text-red-500"></i> Dhaka, Bangladesh
+                            </div>
+                            <a href="https://blog.maksudul.bd" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2.5 text-slate-600 hover:text-blue-600 dark:text-slate-300 dark:hover:text-blue-400">
+                                <i class="fas fa-globe w-4 text-center text-green-500"></i> blog.maksudul.bd
+                            </a>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="mt-4 grid grid-cols-3 gap-2 border-t border-slate-200 pt-3 text-center dark:border-slate-800">
+                            <div>
+                                <div class="gradient-text text-xl font-extrabold leading-none">7+</div>
+                                <div class="mt-1 text-[11px] text-slate-500 dark:text-slate-400">Years Exp.</div>
+                            </div>
+                            <div>
+                                <div class="gradient-text text-xl font-extrabold leading-none">1.1K+</div>
+                                <div class="mt-1 text-[11px] text-slate-500 dark:text-slate-400">GitHub Stars</div>
+                            </div>
+                            <div>
+                                <div class="gradient-text text-xl font-extrabold leading-none">10+</div>
+                                <div class="mt-1 text-[11px] text-slate-500 dark:text-slate-400">OSS Projects</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack (eye-catching) -->
+                    <div id="skills" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-gradient-to-br from-white to-blue-50/60 p-5 shadow-sm dark:border-slate-800 dark:from-slate-900 dark:to-slate-900">
+                        <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-tr from-blue-500 to-indigo-500 text-white shadow-sm"><i class="fas fa-layer-group text-xs"></i></span>
+                            Tech Stack
+                        </h2>
+                        <div class="space-y-3">
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Languages</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-blue">Python</span><span class="tech-pill tp-blue">JavaScript</span><span class="tech-pill tp-blue">Rust</span>
                                 </div>
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-map-marker-alt w-5 text-center text-red-500"></i>
-                                    <span>Dhaka, Bangladesh</span>
+                            </div>
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Backend &amp; APIs</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-violet">Django</span><span class="tech-pill tp-violet">Django REST Framework</span><span class="tech-pill tp-violet">FastAPI</span><span class="tech-pill tp-violet">Celery</span><span class="tech-pill tp-violet">Django-Q</span>
                                 </div>
-                                <div class="flex items-center gap-3">
-                                    <i class="fas fa-globe w-5 text-center text-green-500"></i>
-                                    <a href="https://blog.maksudul.bd" class="hover:underline">blog.maksudul.bd</a>
+                            </div>
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Data &amp; Messaging</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-emerald">PostgreSQL</span><span class="tech-pill tp-emerald">Redis</span><span class="tech-pill tp-emerald">Memcached</span><span class="tech-pill tp-emerald">RabbitMQ</span><span class="tech-pill tp-emerald">Elasticsearch</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Cloud &amp; DevOps</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-sky">AWS (ECS · Lambda)</span><span class="tech-pill tp-sky">Docker</span><span class="tech-pill tp-sky">GitHub Actions</span><span class="tech-pill tp-sky">CI/CD</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Tooling &amp; Testing</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-amber">Git</span><span class="tech-pill tp-amber">uv</span><span class="tech-pill tp-amber">mypy</span><span class="tech-pill tp-amber">pytest</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="mb-1 text-[11px] font-bold uppercase tracking-wide text-slate-400">Payments &amp; Integrations</p>
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="tech-pill tp-rose">Stripe</span><span class="tech-pill tp-rose">Square</span><span class="tech-pill tp-rose">Razorpay</span><span class="tech-pill tp-rose">Paytm</span><span class="tech-pill tp-rose">OAuth2</span><span class="tech-pill tp-rose">Crossref</span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Education (sidebar — desktop only; on mobile it renders last, after Writing) -->
+                    <div id="education" class="reveal hidden scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:block">
+                        <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"><i class="fas fa-graduation-cap text-xs"></i></span>
+                            Education
+                        </h2>
+                        <h3 class="text-sm font-bold text-slate-900 dark:text-white">Bachelor of Computer Science and Engineering</h3>
+                        <p class="mt-0.5 text-[13px] text-blue-600 dark:text-blue-400">International University of Business Agriculture &amp; Technology</p>
+                        <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">May 2018 – Apr 2022 · Bangladesh</p>
+                        <p class="mt-1 text-[13px] text-slate-600 dark:text-slate-300"><span class="font-semibold">CGPA:</span> 3.70 / 4.00</p>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- ===================== MAIN ===================== -->
+            <div class="space-y-4 lg:col-span-8">
+                <!-- About -->
+                <section id="about" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300"><i class="fas fa-user text-xs"></i></span>
+                        About
+                    </h2>
+                    <p class="text-[15px] leading-relaxed text-slate-600 dark:text-slate-300">
+                        I'm a software engineer focused on backend development and infrastructure using Python, Django, and
+                        AWS. Currently at
+                        <a href="https://www.neliti.com/" target="_blank" rel="noopener noreferrer" class="font-semibold text-blue-600 hover:underline dark:text-blue-400">Neliti</a>,
+                        I work on backend services, CI/CD automation, and production deployments. Alongside my day-to-day
+                        work, I'm one of the maintainers of <span class="font-semibold text-slate-800 dark:text-slate-100">Django Packages</span>
+                        and contribute to open-source projects such as
+                        <span class="font-semibold text-slate-800 dark:text-slate-100">Read the Docs</span>,
+                        <span class="font-semibold text-slate-800 dark:text-slate-100">Ruff</span> etc, helping improve tools
+                        used by developers worldwide.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section id="experience" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-blue-600 dark:bg-blue-900/40 dark:text-blue-300"><i class="fas fa-briefcase text-xs"></i></span>
+                        Work Experience
+                    </h2>
+
+                    <div class="relative space-y-6 border-l-2 border-slate-200 pl-6 dark:border-slate-700">
+                        <!-- Neliti -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-blue-500 dark:border-slate-900"></span>
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Software Engineer</h3>
+                                <span class="text-[13px] text-slate-400">Aug 2021 – Present</span>
+                            </div>
+                            <div class="text-[13px] font-medium text-blue-600 dark:text-blue-400">
+                                <a href="https://www.neliti.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:underline">Neliti Pty Ltd <i class="fas fa-external-link-alt text-[10px]"></i></a>
+                                <span class="font-normal text-slate-400">· Singapore (Remote) · Indonesia's largest research repository</span>
+                            </div>
+                            <ul class="mt-2 list-outside list-disc space-y-1 pl-4 text-sm leading-snug text-slate-600 marker:text-blue-400 dark:text-slate-300">
+                                <li>Migrated infrastructure to <strong>AWS ECS</strong>, reducing costs by <strong>25%</strong>.</li>
+                                <li>Automated deployments with <strong>GitHub Actions</strong>, enabling <strong>zero-downtime</strong> releases.</li>
+                                <li>Implemented PDF compression via <strong>AWS Lambda</strong>, reducing server load by <strong>15%</strong> and cost by <strong>5%</strong>.</li>
+                                <li>Built a <strong>custom domain service</strong> allowing customers to serve content from their own domains automatically.</li>
+                                <li>Revamped dependency management using <strong>pip-tools</strong> and <strong>GitHub Actions</strong>, removing <strong>90%</strong> of manual work.</li>
+                                <li>Developed <strong>API v2</strong> with role-based permissions using <strong>Django Rest Framework</strong>.</li>
+                                <li>Integrated and automated <strong>DOI</strong> (Digital Object Identifier) registration using <strong>Crossref</strong>.</li>
+                                <li>Implemented an <strong>Elasticsearch</strong>-based search engine for searching articles.</li>
+                                <li>Fixed <strong>memory leaks</strong> and <strong>thread-safety</strong> issues, pushing a patch to an upstream open-source package.</li>
+                                <li>Integrated <strong>Stripe global payouts</strong>, empowering Affiliate program users to receive international payments seamlessly.</li>
+                            </ul>
+                        </div>
+
+                        <!-- The SmartLabs -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 dark:border-slate-900 dark:bg-slate-600"></span>
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Software Developer</h3>
+                                <span class="text-[13px] text-slate-400">Jan 2018 – Jul 2021</span>
+                            </div>
+                            <div class="text-[13px] font-medium text-blue-600 dark:text-blue-400">
+                                The SmartLabs <span class="font-normal text-slate-400">· India (Remote)</span>
+                            </div>
+                            <ul class="mt-2 list-outside list-disc space-y-1 pl-4 text-sm leading-snug text-slate-600 marker:text-blue-400 dark:text-slate-300">
+                                <li>Built diagnostic test booking and online payment systems using PayTM and RazorPay.</li>
+                                <li>Developed e-commerce platforms for pet products with online payment and customer notifications.</li>
+                                <li>Integrated shipment providers for tracking products, eliminating 95% of manual work.</li>
+                                <li>Implemented REST APIs with Django REST Framework for mobile applications.</li>
+                                <li>Migrated legacy codebases from Python 2.7 to 3.6.</li>
+                            </ul>
+                        </div>
+
+                        <!-- GSoC -->
+                        <div class="relative">
+                            <span class="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full border-2 border-white bg-slate-300 dark:border-slate-900 dark:bg-slate-600"></span>
+                            <div class="flex flex-wrap items-baseline justify-between gap-x-2">
+                                <h3 class="text-base font-bold text-slate-900 dark:text-white">Google Summer of Code Developer</h3>
+                                <span class="text-[13px] text-slate-400">May 2019 – Aug 2019</span>
+                            </div>
+                            <div class="text-[13px] font-medium text-blue-600 dark:text-blue-400">
+                                <a href="https://readthedocs.org/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 hover:underline">Read the Docs <i class="fas fa-external-link-alt text-[10px]"></i></a>
+                                <span class="font-normal text-slate-400">· United States (Remote)</span>
+                            </div>
+                            <ul class="mt-2 list-outside list-disc space-y-1 pl-4 text-sm leading-snug text-slate-600 marker:text-blue-400 dark:text-slate-300">
+                                <li>Architected a CI system for documentation builds on Pull Requests.</li>
+                                <li>Developed features to build documentation on PR creation and send status notifications to GitHub/GitLab APIs.
+                                    <a href="https://blog.readthedocs.com/building-docs-for-pull-requests/" target="_blank" rel="noopener noreferrer" class="ml-1 inline-flex items-center gap-1 text-blue-600 hover:underline dark:text-blue-400"><i class="fas fa-external-link-alt text-[10px]"></i> Project blog post</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Open Source -->
+                <section id="opensource" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-emerald-100 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-300"><i class="fas fa-code-branch text-xs"></i></span>
+                        Open Source Contributions
+                    </h2>
+
+                    <div class="space-y-3">
+                        <!-- Django Packages -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-emerald-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-emerald-800">
+                            <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="text-[15px] font-bold text-slate-900 dark:text-white">
+                                    <a href="https://djangopackages.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">Django Packages <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a>
+                                </h3>
+                                <span class="rounded-full bg-green-100 px-2 py-0.5 text-[11px] font-semibold text-green-800 dark:bg-green-900 dark:text-green-200">Maintainer</span>
+                            </div>
+                            <ul class="list-outside list-disc space-y-1 pl-4 text-sm leading-snug text-slate-600 marker:text-emerald-400 dark:text-slate-300">
+                                <li>Migrated legacy templates to <strong>Tailwind CSS</strong>, boosting responsiveness and maintainability.</li>
+                                <li>Eliminated <strong>N+1 queries</strong> and added caching, cutting database load by <strong>4M+ queries/month</strong>.</li>
+                                <li>Boosted SEO and social engagement via optimized metadata, sitemaps, and OpenGraph support.</li>
+                                <li>Upgraded to <strong>Python 3.11</strong> and <strong>Django 5</strong> for better security and performance.</li>
+                                <li>Replaced cron jobs with <strong>Django-Q</strong> task system.</li>
+                                <li>Optimized high-concurrency throughput by migrating to <strong>psycopg3</strong> with native pooling.</li>
+                                <li>Implemented <strong>PostgreSQL Full-Text Search</strong>, delivering high-relevance results with fuzzy matching and weight-based prioritization.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Read the Docs -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <div class="mb-2 flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="text-[15px] font-bold text-slate-900 dark:text-white">
+                                    <a href="https://readthedocs.org" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">Read the Docs <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a>
+                                </h3>
+                                <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">Contributor</span>
+                            </div>
+                            <ul class="list-outside list-disc space-y-1 pl-4 text-sm leading-snug text-slate-600 marker:text-blue-400 dark:text-slate-300">
+                                <li>Collaborated with the core team on <strong>database normalization</strong> affecting millions of rows.
+                                    <a href="https://github.com/readthedocs/readthedocs.org/pulls?q=is%3Apr+is%3Amerged+author%3Asaadmk11+RemoteRepository" target="_blank" rel="noopener noreferrer" class="ml-1 text-blue-600 hover:underline dark:text-blue-400">(<i class="fas fa-file-alt text-[10px]"></i> My Work)</a>
+                                </li>
+                                <li>Improved <strong>Elasticsearch</strong> index and search performance by <strong>15%</strong>.</li>
+                                <li>Unified and standardized Django settings across the platform.</li>
+                                <li>Developed API v3 endpoints and filters using Django REST Framework.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Two smaller contributions side-by-side -->
+                        <div class="grid gap-3 sm:grid-cols-2">
+                            <!-- django-elasticsearch-dsl -->
+                            <div class="flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                                <div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                                    <h3 class="text-[15px] font-bold text-slate-900 dark:text-white"><a href="https://github.com/django-es/django-elasticsearch-dsl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">django-elasticsearch-dsl <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a></h3>
+                                    <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">Contributor</span>
+                                </div>
+                                <p class="text-sm leading-snug text-slate-600 dark:text-slate-300">Migrated test suite from TravisCI to <strong>GitHub Actions</strong> and implemented Django signals for better integration.</p>
+                            </div>
+                            <!-- djangoproject.com -->
+                            <div class="flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                                <div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                                    <h3 class="text-[15px] font-bold text-slate-900 dark:text-white"><a href="https://www.djangoproject.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">djangoproject.com <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a></h3>
+                                    <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">Contributor</span>
+                                </div>
+                                <p class="text-sm leading-snug text-slate-600 dark:text-slate-300">Improved overall page performance by analyzing and optimizing database queries.</p>
+                            </div>
+                        </div>
+
+                        <!-- Ruff (full-width on the last line; showcases the rule plugins) -->
+                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <div class="mb-1.5 flex flex-wrap items-center justify-between gap-2">
+                                <h3 class="text-[15px] font-bold text-slate-900 dark:text-white"><a href="https://github.com/astral-sh/ruff" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-blue-400">Ruff (Python linter) <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></a></h3>
+                                <span class="rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-semibold text-blue-800 dark:bg-blue-900 dark:text-blue-200">Contributor</span>
+                            </div>
+                            <p class="text-sm leading-snug text-slate-600 dark:text-slate-300">Implemented linter rules for plugins including <code>flake8-bandit</code>, <code>isort</code>, <code>flake8-self</code>, and <code>pygrep-hooks</code>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects -->
+                <section id="projects" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <h2 class="mb-4 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-purple-100 text-purple-600 dark:bg-purple-900/40 dark:text-purple-300"><i class="fas fa-laptop-code text-xs"></i></span>
+                        Featured Projects
+                    </h2>
+                    <div id="openSourceRepos" class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <div class="col-span-full py-6 text-center text-sm text-slate-500">
+                            <i class="fas fa-spinner fa-spin"></i> Loading repositories…
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Writing -->
+                <section id="writing" class="reveal scroll-mt-20 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                    <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
+                        <h2 class="flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                            <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-orange-100 text-orange-600 dark:bg-orange-900/40 dark:text-orange-300"><i class="fas fa-rss text-xs"></i></span>
+                            Featured Articles
+                        </h2>
+                        <div class="flex items-center gap-2 text-xs">
+                            <a href="https://blog.maksudul.bd/" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline dark:text-blue-400">blog.maksudul.bd</a>
+                            <span class="text-slate-300 dark:text-slate-600">·</span>
+                            <a href="https://dev.to/saadmk11" target="_blank" rel="noopener noreferrer" class="font-medium text-blue-600 hover:underline dark:text-blue-400">dev.to/saadmk11</a>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                        <a href="https://blog.readthedocs.com/building-docs-for-pull-requests/" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">GSoC 2019: Autobuild Documentation for Pull Requests <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">A deep dive into my Google Summer of Code project at Read the Docs, architecting a CI system for documentation.</p>
+                        </a>
+                        <a href="https://blog.maksudul.bd/posts/build-python-cli-tool-with-rust/" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Build a Python CLI Tool with Rust <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">A simple example of how to build a Python CLI tool with Rust.</p>
+                        </a>
+                        <a href="https://blog.maksudul.bd/posts/django-postgresql-database-connection-pooling-with-pgbouncer/" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Django Database Connection Pooling with PgBouncer <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">An example of Django PostgreSQL database connection pooling with PgBouncer.</p>
+                        </a>
+                        <a href="https://blog.maksudul.bd/sorting-strategies-for-optional-fields-in-django/" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Sorting Strategies for Optional Fields in Django <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">Handling NULL values effectively when sorting querysets in Django using F expressions with nulls_last and nulls_first.</p>
+                        </a>
+                        <a href="https://dev.to/saadmk11/github-actions-changelog-ci-4ojh" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Changelog CI: Auto-generated Changelogs <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">Introducing my GitHub Action that automatically generates changelogs from your commit messages.</p>
+                        </a>
+                        <a href="https://dev.to/saadmk11/github-actions-version-updater-similar-to-github-s-dependabot-but-for-github-actions-2g2i" target="_blank" rel="noopener noreferrer" class="group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:border-blue-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-800/40 dark:hover:border-blue-800">
+                            <h3 class="text-sm font-bold leading-snug text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">GitHub Actions Version Updater, Similar to GitHub's Dependabot, but for GitHub Actions <i class="fas fa-external-link-alt text-[10px] text-slate-400"></i></h3>
+                            <p class="mt-1.5 text-[13px] leading-snug text-slate-500 dark:text-slate-400">Introducing my GitHub Action that automatically updates your GitHub Actions to the latest versions.</p>
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Education (mobile only — on desktop it lives in the sidebar) -->
+                <div class="reveal scroll-mt-24 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900 lg:hidden">
+                    <h2 class="mb-3 flex items-center gap-2.5 text-[15px] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
+                        <span class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-indigo-600 dark:bg-indigo-900/40 dark:text-indigo-300"><i class="fas fa-graduation-cap text-xs"></i></span>
+                        Education
+                    </h2>
+                    <h3 class="text-sm font-bold text-slate-900 dark:text-white">Bachelor of Computer Science and Engineering</h3>
+                    <p class="mt-0.5 text-[13px] text-blue-600 dark:text-blue-400">International University of Business Agriculture &amp; Technology</p>
+                    <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">May 2018 – Apr 2022 · Bangladesh</p>
+                    <p class="mt-1 text-[13px] text-slate-600 dark:text-slate-300"><span class="font-semibold">CGPA:</span> 3.70 / 4.00</p>
                 </div>
 
-                <!-- Main Content -->
-                <div class="lg:col-span-9 space-y-8">
-                    <!-- About Section -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
-                            <i class="fas fa-user-circle text-blue-500"></i> About Me
-                        </h2>
-                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                            I'm a software engineer focused on backend development and infrastructure using Python,
-                            Django, and AWS. Currently at
-                            <a
-                                href="https://www.neliti.com/"
-                                target="_blank"
-                                class="font-semibold text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center gap-1"
-                            >
-                                Neliti <i class="fas fa-external-link-alt text-xs"></i> </a
-                            >, I work on backend services, CI/CD automation, and production deployments. Alongside my
-                            day-to-day work, I'm one of the maintainers of
-                            <span class="font-semibold">Django Packages</span> and contribute to open-source projects
-                            such as <span class="font-semibold">Read the Docs</span>,
-                            <span class="font-semibold">Ruff</span> etc, helping improve tools used by developers
-                            worldwide.
-                        </p>
-                    </section>
-
-                    <!-- Work Experience -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-briefcase text-blue-500"></i> Work Experience
-                        </h2>
-
-                        <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3 space-y-8">
-                            <!-- Neliti -->
-                            <div class="ml-6 relative">
-                                <span
-                                    class="absolute -left-[31px] top-1 bg-blue-500 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
-                                ></span>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Engineer</h3>
-                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
-                                    <a
-                                        href="https://www.neliti.com/"
-                                        target="_blank"
-                                        class="hover:underline inline-flex items-center gap-1"
-                                        >Neliti Pty Ltd <i class="fas fa-external-link-alt text-xs"></i
-                                    ></a>
-                                    <span class="text-slate-400 text-sm font-normal"
-                                        >• Aug 2021 - Present • Singapore (Remote)</span
-                                    >
-                                </div>
-                                <p class="text-slate-600 dark:text-slate-300 text-sm mb-2">
-                                    Indonesia's largest research repository.
-                                </p>
-                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
-                                    <li>Migrated infrastructure to <strong>AWS ECS</strong>, reducing costs by <strong>25%</strong>.</li>
-                                    <li>Automated deployments with <strong>GitHub Actions</strong>, enabling <strong>zero-downtime</strong> releases.</li>
-                                    <li>
-                                        Implemented PDF compression via <strong>AWS Lambda</strong>, reducing server load by <strong>15%</strong> and cost
-                                        by <strong>5%</strong>.
-                                    </li>
-                                    <li>
-                                        Built a <strong>custom domain service</strong> allowing customers to serve content from their own
-                                        domains automatically.
-                                    </li>
-                                    <li>
-                                        Revamped dependency management using <strong>pip-tools</strong> and <strong>GitHub Actions</strong>, removing <strong>90%</strong>
-                                        of manual work.
-                                    </li>
-                                    <li>Developed <strong>API v2</strong> with role-based permissions using <strong>Django Rest Framework</strong>.</li>
-                                    <li>
-                                        Integrated and automated <strong>DOI</strong> (Digital Object Identifier) registration using
-                                        <strong>Crossref</strong>.
-                                    </li>
-                                    <li>Implemented an <strong>Elasticsearch</strong>-based search engine for searching articles.</li>
-                                    <li>
-                                        Fixed <strong>memory leaks</strong> and <strong>thread-safety</strong> issues, pushing a patch to an upstream
-                                        open-source package.
-                                    </li>
-                                    <li>
-                                        Integrated <strong>Stripe global payouts</strong>, empowering Affiliate program users to receive international payments seamlessly.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- The SmartLabs -->
-                            <div class="ml-6 relative">
-                                <span
-                                    class="absolute -left-[31px] top-1 bg-slate-300 dark:bg-slate-600 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
-                                ></span>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">Software Developer</h3>
-                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
-                                    The SmartLabs
-                                    <span class="text-slate-400 text-sm font-normal"
-                                        >• Jan 2018 - Jul 2021 • India (Remote)</span
-                                    >
-                                </div>
-                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
-                                    <li>
-                                        Built diagnostic test booking and online payment systems using PayTM and
-                                        RazorPay.
-                                    </li>
-                                    <li>
-                                        Developed e-commerce platforms for pet products with online payment and customer
-                                        notifications.
-                                    </li>
-                                    <li>
-                                        Integrated shipment providers for tracking products, eliminating 95% of manual
-                                        work.
-                                    </li>
-                                    <li>Implemented REST APIs with Django REST Framework for mobile applications.</li>
-                                    <li>Migrated legacy codebases from Python 2.7 to 3.6.</li>
-                                </ul>
-                            </div>
-
-                            <!-- GSoC -->
-                            <div class="ml-6 relative">
-                                <span
-                                    class="absolute -left-[31px] top-1 bg-slate-300 dark:bg-slate-600 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
-                                ></span>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-                                    Google Summer of Code Developer
-                                </h3>
-                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
-                                    <a
-                                        href="https://readthedocs.org/"
-                                        target="_blank"
-                                        class="hover:underline inline-flex items-center gap-1"
-                                        >Read the Docs <i class="fas fa-external-link-alt text-xs"></i
-                                    ></a>
-                                    <span class="text-slate-400 text-sm font-normal">• May 2019 - Aug 2019</span>
-                                </div>
-                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-1">
-                                    <li>Architected a CI system for documentation builds on Pull Requests.</li>
-                                    <li>
-                                        Developed features to build documentation on PR creation and send status
-                                        notifications to GitHub/GitLab APIs.
-                                    </li>
-                                    <li class="mt-2 list-none">
-                                        <a
-                                            href="https://blog.readthedocs.com/building-docs-for-pull-requests/"
-                                            target="_blank"
-                                            class="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline"
-                                            ><i class="fas fa-external-link-alt text-xs"></i> Read Project Blog Post</a
-                                        >
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Education -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-graduation-cap text-indigo-500"></i> Education
-                        </h2>
-                        <div class="relative border-l-2 border-slate-200 dark:border-slate-700 ml-3">
-                            <div class="ml-6 relative">
-                                <span
-                                    class="absolute -left-[31px] top-1 bg-indigo-500 w-4 h-4 rounded-full border-4 border-white dark:border-slate-800"
-                                ></span>
-                                <h3 class="text-xl font-bold text-slate-900 dark:text-white">
-                                    Bachelor of Computer Science and Engineering
-                                </h3>
-                                <div class="text-blue-600 dark:text-blue-400 font-medium mb-1">
-                                    International University of Business Agriculture & Technology
-                                    <span class="text-slate-400 text-sm font-normal"
-                                        >• May 2018 - Apr 2022 • Bangladesh</span
-                                    >
-                                </div>
-                                <p class="text-slate-600 dark:text-slate-300 text-sm">
-                                    <span class="font-semibold">CGPA:</span> 3.70 (out of 4)
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Open Source Contributions -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-code-branch text-green-500"></i> Key Open Source Contributions
-                        </h2>
-                        <div class="grid grid-cols-1 gap-6">
-                            <!-- Django Packages -->
-                            <div
-                                class="p-6 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                            >
-                                <div class="flex justify-between items-start mb-3">
-                                    <h3 class="font-bold text-xl text-slate-900 dark:text-white">
-                                        <a
-                                            href="https://djangopackages.org"
-                                            target="_blank"
-                                            class="hover:text-blue-500 flex items-center gap-2"
-                                        >
-                                            Django Packages
-                                            <i class="fas fa-external-link-alt text-xs text-slate-400"></i>
-                                        </a>
-                                    </h3>
-                                    <span
-                                        class="px-3 py-1 text-xs font-semibold bg-green-100 text-green-800 rounded-full dark:bg-green-900 dark:text-green-200"
-                                        >Maintainer</span
-                                    >
-                                </div>
-                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-2">
-                                    <li>
-                                        Migrated legacy templates to <strong>Tailwind CSS</strong>, boosting
-                                        responsiveness and maintainability.
-                                    </li>
-                                    <li>
-                                        Eliminated <strong>N+1 queries</strong> and added caching, cutting database load
-                                        by <strong>4M+ queries/month</strong>.
-                                    </li>
-                                    <li>
-                                        Boosted SEO and social engagement via optimized metadata, sitemaps, and
-                                        OpenGraph support.
-                                    </li>
-                                    <li>
-                                        Upgraded to <strong>Python 3.11</strong> and <strong>Django 5</strong> for
-                                        better security and performance.
-                                    </li>
-                                    <li>Replaced cron jobs with <strong>Django-Q</strong> task system.</li>
-                                    <li>
-                                        Optimized high-concurrency throughput by migrating to
-                                        <strong>psycopg3</strong> with native pooling.
-                                    </li>
-                                    <li>
-                                        Implemented <strong>PostgreSQL Full-Text Search</strong>, delivering
-                                        high-relevance results with fuzzy matching and weight-based prioritization.
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Read the Docs -->
-                            <div
-                                class="p-6 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                            >
-                                <div class="flex justify-between items-start mb-3">
-                                    <h3 class="font-bold text-xl text-slate-900 dark:text-white">
-                                        <a
-                                            href="https://readthedocs.org"
-                                            target="_blank"
-                                            class="hover:text-blue-500 flex items-center gap-2"
-                                        >
-                                            Read the Docs
-                                            <i class="fas fa-external-link-alt text-xs text-slate-400"></i>
-                                        </a>
-                                    </h3>
-                                    <span
-                                        class="px-3 py-1 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                                        >Contributor</span
-                                    >
-                                </div>
-                                <ul class="list-disc list-inside text-slate-600 dark:text-slate-300 text-sm space-y-2">
-                                    <li>
-                                        Collaborated with the core team on
-                                        <strong>database normalization</strong> affecting millions of rows.
-                                        <a
-                                            href="https://github.com/readthedocs/readthedocs.org/pulls?q=is%3Apr+is%3Amerged+author%3Asaadmk11+RemoteRepository"
-                                            target="_blank"
-                                            class="text-blue-600 dark:text-blue-400 hover:underline ml-1"
-                                            >(<i class="fas fa-file-alt text-xs"></i> My Work)</a
-                                        >
-                                    </li>
-                                    <li>
-                                        Improved <strong>Elasticsearch</strong> index and search performance by
-                                        <strong>15%</strong>.
-                                    </li>
-                                    <li>Unified and standardized Django settings across the platform.</li>
-                                    <li>Developed API v3 endpoints and filters using Django REST Framework.</li>
-                                </ul>
-                            </div>
-
-                            <!-- Other Contributions Grid -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div
-                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all flex flex-col"
-                                >
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
-                                            <a
-                                                href="https://github.com/astral-sh/ruff"
-                                                target="_blank"
-                                                class="hover:text-blue-500 flex items-center gap-2"
-                                                >Ruff (Python linter) <i class="fas fa-external-link-alt text-xs text-slate-400"></i
-                                            ></a>
-                                        </h3>
-                                        <span
-                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                                            >Contributor</span
-                                        >
-                                    </div>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Implemented linter rules for plugins including <code>flake8-bandit</code>,
-                                        <code>isort</code>, <code>flake8-self</code>, and <code>pygrep-hooks</code>.
-                                    </p>
-                                </div>
-                                <div
-                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all flex flex-col"
-                                >
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
-                                            <a
-                                                href="https://github.com/django-es/django-elasticsearch-dsl"
-                                                target="_blank"
-                                                class="hover:text-blue-500 flex items-center gap-2"
-                                                >django-elasticsearch-dsl
-                                                <i class="fas fa-external-link-alt text-xs text-slate-400"></i
-                                            ></a>
-                                        </h3>
-                                        <span
-                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                                            >Contributor</span
-                                        >
-                                    </div>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Migrated Test Suite from TravisCI to <strong>GitHub Actions</strong> and
-                                        implemented Django signals for better integration.
-                                    </p>
-                                </div>
-                                <div
-                                    class="p-5 bg-slate-50 dark:bg-slate-700/30 rounded-xl border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all md:col-span-2 flex flex-col"
-                                >
-                                    <div class="flex justify-between items-start mb-2">
-                                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">
-                                            <a
-                                                href="https://www.djangoproject.com"
-                                                target="_blank"
-                                                class="hover:text-blue-500 flex items-center gap-2"
-                                                >djangoproject.com
-                                                <i class="fas fa-external-link-alt text-xs text-slate-400"></i
-                                            ></a>
-                                        </h3>
-                                        <span
-                                            class="px-2 py-0.5 text-xs font-semibold bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-200"
-                                            >Contributor</span
-                                        >
-                                    </div>
-                                    <p class="text-sm text-slate-600 dark:text-slate-300">
-                                        Improved overall page performance by analyzing and optimizing database queries.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Projects Section -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                            <i class="fas fa-laptop-code text-purple-500"></i> Featured Projects
-                        </h2>
-                        <div id="openSourceRepos" class="flex flex-wrap -m-2">
-                            <!-- Content loaded via main.js -->
-                            <div class="w-full text-center py-8 text-slate-500">
-                                <i class="fas fa-spinner fa-spin fa-2x"></i>
-                                <p class="mt-2">Loading repositories...</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Blog Posts -->
-                    <section
-                        class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg p-8 border border-slate-200 dark:border-slate-700"
-                    >
-                        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
-                            <h2 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
-                                <i class="fas fa-rss text-orange-500"></i> Featured Articles
-                            </h2>
-                            <div class="flex gap-3">
-                                <a
-                                    href="https://blog.maksudul.bd/"
-                                    target="_blank"
-                                    class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
-                                >
-                                    blog.maksudul.bd <i class="fas fa-external-link-alt text-xs"></i>
-                                </a>
-                                <span class="text-slate-300 dark:text-slate-600">|</span>
-                                <a
-                                    href="https://dev.to/saadmk11"
-                                    target="_blank"
-                                    class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
-                                >
-                                    dev.to/saadmk11 <i class="fas fa-external-link-alt text-xs"></i>
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <a
-                                href="https://blog.readthedocs.com/building-docs-for-pull-requests/"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        GSoC 2019: Autobuild Documentation for Pull Requests
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        A deep dive into my Google Summer of Code project at Read the Docs, architecting
-                                        a CI system for documentation.
-                                    </p>
-                                </div>
-                            </a>
-                            <a
-                                href="https://blog.maksudul.bd/posts/build-python-cli-tool-with-rust/"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        Build a Python CLI Tool with Rust
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        A simple example of how to build a Python CLI tool with Rust
-                                    </p>
-                                </div>
-                            </a>
-                            <a
-                                href="https://blog.maksudul.bd/posts/django-postgresql-database-connection-pooling-with-pgbouncer/"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        Django Database Connection Pooling with PgBouncer
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        An example of Django PostgreSQL Database Connection Pooling with PgBouncer
-                                    </p>
-                                </div>
-                            </a>
-                            <a
-                                href="https://blog.maksudul.bd/sorting-strategies-for-optional-fields-in-django/"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        Sorting Strategies for Optional Fields in Django
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        Handling NULL values effectively when sorting querysets in Django using F
-                                        expressions with nulls_last and nulls_first.
-                                    </p>
-                                </div>
-                            </a>
-                            <a
-                                href="https://dev.to/saadmk11/github-actions-changelog-ci-4ojh"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        Changelog CI: Auto-generated Changelogs
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        Introducing my GitHub Action that automatically generates changelogs from your
-                                        commit messages.
-                                    </p>
-                                </div>
-                            </a>
-                            <a
-                                href="https://dev.to/saadmk11/github-actions-version-updater-similar-to-github-s-dependabot-but-for-github-actions-2g2i"
-                                target="_blank"
-                                class="group h-full"
-                            >
-                                <div
-                                    class="p-5 h-full rounded-xl bg-slate-50 dark:bg-slate-700/30 border border-slate-100 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all"
-                                >
-                                    <h3
-                                        class="font-bold text-lg text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 mb-2"
-                                    >
-                                        GitHub Actions Version Updater, Similar to GitHub's Dependabot, but for GitHub
-                                        Actions
-                                        <i class="fas fa-external-link-alt text-xs ml-1"></i>
-                                    </h3>
-                                    <p class="text-sm text-slate-600 dark:text-slate-400">
-                                        Introducing my GitHub Action that automatically updates your GitHub Actions to
-                                        the latest versions.
-                                    </p>
-                                </div>
-                            </a>
-                        </div>
-                    </section>
-
-                    <!-- Footer -->
-                    <footer class="text-center text-slate-500 dark:text-slate-400 text-sm py-8">
-                        <p>
-                            &copy;
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>
-                            Khandker Maksudul Haque. Built with Tailwind CSS.
-                        </p>
-                    </footer>
-                </div>
+                <!-- Footer -->
+                <footer class="px-1 pt-1 text-center text-xs text-slate-500 dark:text-slate-400 sm:flex sm:items-center sm:justify-between sm:text-left">
+                    <p>&copy; <script>document.write(new Date().getFullYear());</script> Khandker Maksudul Haque. All rights reserved.</p>
+                    <p class="mt-1 flex items-center justify-center gap-1.5 sm:mt-0">Built with <i class="fa-brands fa-html5 text-orange-500"></i> &amp; Tailwind CSS</p>
+                </footer>
             </div>
-        </div>
+        </main>
 
         <script src="main.js"></script>
     </body>
